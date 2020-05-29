@@ -4,7 +4,7 @@ import Process_Flow_Outputs as PFO #Set of functions used to process data
 
 csv_path  = 'PATH_TO_EMISSIONS_FILE'
 
-csv_path = '/Users/vanderbilt/Desktop/Research_2020/CIRCLES/Model_Dev/flow/examples/data/highway_20200524-1915551590365755.907299-emission.csv'
+csv_path = '/Users/vanderbilt/Desktop/Research_2020/CIRCLES/Model_Dev/flow/examples/data/I-210_subnetwork_20200529-1051311590767491.398327-emission.csv'
 
 i210_Data = PFO.SimulationData(csv_path = csv_path) #This loads the data from emissions file
 
@@ -22,7 +22,7 @@ lane_list = ['4','4','5','4','5','4','5'] #Corresponds to outter most lanes
 
 if(WANT_GHOST_CELL):
     edge_list.insert(0,'ghost0')
-    edge_list.insert(0,'4')
+    lane_list.insert(0,'4')
    
     
     

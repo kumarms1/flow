@@ -23,14 +23,16 @@ from flow.envs import TestEnv
 
 WANT_GHOST_CELL = True
 WANT_DOWNSTREAM_BOUNDARY = True
-ON_RAMP = False
+ON_RAMP = True
 
+horizon = 1000 #number of simulation steps
+sim_step = .5 #Simulation step size
 
-inflow_rate = 2050
+inflow_rate = 2050 #Per lane flow rate in veh/hr
 inflow_speed = 25.5
 
 
-accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3})
+accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3,'fail_safe': ['obey_speed_limit', 'safe_velocity', 'feasible_accel', 'instantaneous']}
 
 
 highway_start_edge = ''
@@ -55,15 +57,9 @@ if ON_RAMP:
             lane_change_mode="strategic",
         ),
         acceleration_controller=accel_data,
+        car_following_params=SumoCarFollowingParams(speed_mode = 'aggressive'),
         routing_controller=(I210Router, {})
     )
-
-    # inflow.add(
-    #     veh_type="human",
-    #     edge=highway_start_edge,
-    #     vehs_per_hour=inflow_rate,
-    #     departLane="best",
-    #     departSpeed=inflow_speed)
 
     lane_list = ['0','1','2','3','4']
 
@@ -89,27 +85,16 @@ if ON_RAMP:
         departSpeed=10)
 
 else:
-    # create the base vehicle type that will be used for inflows
+
     vehicles.add(
-        "human",
+        'human',
         num_vehicles=0,
         lane_change_params=SumoLaneChangeParams(
-            lane_change_mode="strategic",
+            lane_change_mode='strategic',
         ),
         acceleration_controller=accel_data,
+        car_following_params=SumoCarFollowingParams(speed_mode = 'aggressive')
     )
-
-    # If you want to turn off the fail safes uncomment this:
-
-    # vehicles.add(
-    #     'human',
-    #     num_vehicles=0,
-    #     lane_change_params=SumoLaneChangeParams(
-    #         lane_change_mode='strategic',
-    #     ),
-    #     acceleration_controller=accel_data,
-    #     car_following_params=SumoCarFollowingParams(speed_mode='19')
-    # )
 
     lane_list = ['0','1','2','3','4']
 
@@ -123,8 +108,6 @@ else:
 
 
 network_xml_file = "examples/exp_configs/templates/sumo/i210_with_ghost_cell_with_downstream.xml"
-
-# network_xml_file = "examples/exp_configs/templates/sumo/i210_with_congestion.xml"
 
 NET_TEMPLATE = os.path.join(config.PROJECT_PATH,network_xml_file)
 
@@ -144,7 +127,7 @@ flow_params = dict(
 
     # simulation-related parameters
     sim=SumoParams(
-        sim_step=0.4,
+        sim_step=sim_step,
         render=False,
         color_by_speed=True,
         use_ballistic=True
@@ -152,7 +135,7 @@ flow_params = dict(
 
     # environment related parameters (see flow.core.params.EnvParams)
     env=EnvParams(
-        horizon=1000,
+        horizon=horizon,
     ),
 
     # network-related parameters (see flow.core.params.NetParams and the

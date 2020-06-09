@@ -32,8 +32,9 @@ inflow_rate = 2050 #Per lane flow rate in veh/hr
 inflow_speed = 25.5
 
 
-accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3,'fail_safe': ['obey_speed_limit', 'safe_velocity', 'feasible_accel', 'instantaneous']}
+# accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3,'fail_safe': ['obey_speed_limit', 'safe_velocity', 'feasible_accel', 'instantaneous']})
 
+accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3})
 
 highway_start_edge = ''
 
@@ -49,6 +50,10 @@ vehicles = VehicleParams()
 
 inflow = InFlows()
 
+
+# car_following_params=SumoCarFollowingParams(speed_mode = 'aggressive'),
+
+
 if ON_RAMP:   
     vehicles.add(
         "human",
@@ -57,7 +62,6 @@ if ON_RAMP:
             lane_change_mode="strategic",
         ),
         acceleration_controller=accel_data,
-        car_following_params=SumoCarFollowingParams(speed_mode = 'aggressive'),
         routing_controller=(I210Router, {})
     )
 
@@ -93,7 +97,6 @@ else:
             lane_change_mode='strategic',
         ),
         acceleration_controller=accel_data,
-        car_following_params=SumoCarFollowingParams(speed_mode = 'aggressive')
     )
 
     lane_list = ['0','1','2','3','4']

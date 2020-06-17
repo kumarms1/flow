@@ -61,17 +61,16 @@ v0 = round(float(sys.argv[4]),3)
 T = round(float(sys.argv[5]),2)
 delta = round(float(sys.argv[6]),2)
 s0 = round(float(sys.argv[7]),2)
-flag = bool(sys.argv[8])
-
+flag = (sys.argv[8]).lower() == "true"
 accel_data = (IDMController, {'a':a,'b':b,'noise':noise, 'v0':v0, 'T':T, 'delta':delta, 's0':s0})
 
 def setSpeedFlow( fl ):
     if fl:
-        return [25.8,random.uniform(1900,2100)]
+        return [25.8,random.uniform(1500,2500)]
     else:
-        return [random.uniform(22,27),2006]
+        return [random.uniform(15,30),2006]
 
-traffic_speed = setSpeedFlow(flag)
+traffic_speed = setSpeedFlow(flag)[0]
 traffic_flow = setSpeedFlow(flag)[1]
 
 def recordSpeedFlowParams(traffic_speed,traffic_flow):

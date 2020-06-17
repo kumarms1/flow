@@ -108,11 +108,11 @@ flow_params = dict(
     simulator='traci',
     # sumo-related parameters (see flow.core.params.SumoParams)
     sim=SumoParams(
-        sim_step=1,
+        sim_step=0.5,
         render=False,
         lateral_resolution=0.1,
-        emission_path='data',
-        restart_instance=True,
+        emission_path='data/'+str(sys.argv[8]),
+        restart_instance=False,
     ),
     # environment related parameters (see flow.core.params.EnvParams)
     env=EnvParams(

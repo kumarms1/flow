@@ -1,3 +1,4 @@
+
 data = [2,23,27,30,31,33,45,47,59,61,69,78,94,120]
 
 i = 0
@@ -15,16 +16,16 @@ while (i < len(data)):
     j+=1
     d = c.copy()
     mc.append(d)
-    print(c)
+  #  print(c)
     c.clear()
 
 mcc = []
 for k in mc:
     mcc.append(len(k))
 
-mcc.pop()
-mcc.pop(0)
-mcc.pop(0)
+#mcc.pop()
+#mcc.pop(0)
+#mcc.pop(0)
 #print(mc)
 print(mcc)
 

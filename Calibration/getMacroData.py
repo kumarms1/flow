@@ -1,3 +1,7 @@
+"""
+usage: python3 getMacroData.py name_of_data_dir name_of_processed_data_to_be_created_dir fidelity
+"""
+
 #import Process_Flow_Outputs and other libraries
 import Process_Flow_Outputs as PFO
 import matplotlib.pyplot as pt
@@ -6,6 +10,8 @@ import csv
 import os
 import glob
 import sys
+
+os.mkdir("data/"+sys.argv[2])
 
 def getCounts(csv_path,fname):
     #read data into a var
@@ -44,12 +50,13 @@ def getCounts(csv_path,fname):
 
     sorted_time_count_data = np.sort(time_count_data)
     sorted_count_times = sorted_time_count_data
+
  #   counts = np.linspace(1,len(sorted_count_times),len(sorted_count_times))
     #pt.plot(sorted_count_times,counts)
     #pt.show()
-    count_num = countsEveryXSeconds(30, sorted_count_times)
+    count_num = countsEveryXSeconds(int(sys.argv[3]), sorted_count_times)
     print("Writing the counts data from " + fname + ".csv file")
-    with open(sys.argv[2]+"/"+fname+"_counts.csv", 'a', newline='') as file:
+    with open("data/"+sys.argv[2]+"/"+fname+"_counts.csv", 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerows([count_num])
     print("File Written\n")    
@@ -82,8 +89,9 @@ def countsEveryXSeconds(x, sorted_counts, trim=False):
 
 
 if __name__ == "__main__":
-    files = glob.glob(sys.argv[1] + "/highway*.csv")
+    files = glob.glob("data/"+sys.argv[1] + "/highway*.csv")
     files.sort(key=os.path.getmtime)
+    print(sys.argv[1])
     for i in files:
         fname = i.split("/")[2].split("-e")[0]
         getCounts(i,fname)

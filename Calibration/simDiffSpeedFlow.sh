@@ -1,10 +1,10 @@
 python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
 python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
 python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 True
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 True
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 True
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 True
-python3 straight_road_test2.py 1 1.5 0 30 1 4 2 True
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 False
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 true
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 true
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 true
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 true
+#python3 straight_road_test2.py 1 1.5 0 30 1 4 2 true

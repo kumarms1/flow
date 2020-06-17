@@ -24,19 +24,19 @@ The generate_data.py script allows the random generation of IDM paramters within
 The above command will generate the IDM parameter data, run the corresponding simulation for that data set and create the microsimulation csv files in the data/dataDirectory directory and the resultant macroscopic data in the data/macroData directory. 
 
 ## Preliminary Results
-![a](fig/a_params.png)
+![a](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/a_params.png)
 
-![b](fig/b_params.png)
+![b](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/b_params.png)
 
-![n](fig/noise_params.png)
+![n](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/noise_params.png)
 
-![v](fig/v0_params.png)
+![v](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/v0_params.png)
 
-![t](fig/T_params.png)
+![t](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/T_params.png)
 
-![d](fig/delta_params.png)
+![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/delta_params.png)
 
-![s](fig/s0_params.png)
+![s](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/s0_params.png)
 
 ## TO DO
 - [x] create reference data file from default paramter set

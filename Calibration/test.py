@@ -22,6 +22,9 @@ mcc = []
 for k in mc:
     mcc.append(len(k))
 
-print(mc)
+mcc.pop()
+mcc.pop(0)
+mcc.pop(0)
+#print(mc)
 print(mcc)
 

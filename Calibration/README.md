@@ -46,6 +46,15 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 ![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/delta_params.png)
 ![s](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/s0_params.png)
 
+#### Results looking at data trimming first 60 seconds and last 30 seconds (data taken every 30 seconds)
+![a](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/a_params.png)
+![b](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/b_params.png)
+![n](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/noise_params.png)
+![v](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/v0_params.png)
+![t](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/T_params.png)
+![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/delta_params.png)
+![s](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_trimmed_30/s0_params.png)
+
 
 ### Results when looking at data every 60 seconds
 ![a](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_60/a_params.png)
@@ -62,7 +71,7 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 - [x] write script to plot generate macroscopic information from the data and plots necessary graphs
 - [ ] incorporate the error metrics
 - [x] analyze data for different data taking time intervals
-- [ ] analyze data after trimming first 60 seconds and last 30 seconds
+- [x] analyze data after trimming first 60 seconds and last 30 seconds
 - [ ] simulate cases with same IDM paramaters but different speed and inflow parameters
 - [ ] make the plotting and data analysis code more user friendly/general use
 - [ ] update README.md and documentation

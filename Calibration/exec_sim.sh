@@ -34,6 +34,6 @@ echo "Created data/$3 directory for macroscopic data storage"
 echo "Calculating counts data..."
 python3 getMacroData.py data/$2 data/$3
 echo "Macro data collected!"
-python3 createMacroGraphs.py data/$3 $1 $4
+python3 createMacroGraphs.py $3 $1 $4
 echo "All the graphs stored in the figs/ directory"
 echo "Analysis complete!"

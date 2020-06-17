@@ -91,6 +91,7 @@ def plotGraph(yvals, title, vals, figName):
         plt.xlabel("Time (s)")
         plt.ylabel("Car Counts (units)")
         plt.title(title)
+      #  plt.ylim(0,17)
     plt.savefig("figs/"+figName+".png")
     plt.show()
 

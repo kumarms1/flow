@@ -47,7 +47,7 @@ def getCounts(csv_path,fname):
  #   counts = np.linspace(1,len(sorted_count_times),len(sorted_count_times))
     #pt.plot(sorted_count_times,counts)
     #pt.show()
-    count_num = countsEveryXSeconds(60, sorted_count_times)
+    count_num = countsEveryXSeconds(30, sorted_count_times)
     print("Writing the counts data from " + fname + ".csv file")
     with open(sys.argv[2]+"/"+fname+"_counts.csv", 'a', newline='') as file:
         writer = csv.writer(file)
@@ -55,7 +55,7 @@ def getCounts(csv_path,fname):
     print("File Written\n")    
 
 #counts every X seconds
-def countsEveryXSeconds(x, sorted_counts):
+def countsEveryXSeconds(x, sorted_counts, trim=False):
     i = 0
     m = 0
     j = 1
@@ -74,6 +74,10 @@ def countsEveryXSeconds(x, sorted_counts):
     mcc = []
     for k in mc:
         mcc.append(len(k))
+    if (trim==True):
+        mcc.pop()
+        mcc.pop(0)
+        mcc.pop(0)
     return mcc
 
 

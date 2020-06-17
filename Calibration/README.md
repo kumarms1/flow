@@ -19,7 +19,7 @@ The generate_data.py script allows the random generation of IDM paramters within
 
 ## To run multiple sims
 ```bash
-. automate.sh num_of_sims csvFileName.csv dataDirectory macroData Directory
+. automate.sh num_of_sims csvFileName.csv dataDirectory macroDataDirectory
 ```
 The above command will generate the IDM parameter data, run the corresponding simulation for that data set and create the microsimulation csv files in the data/dataDirectory directory and the resultant macroscopic data in the data/macroData directory. 
 

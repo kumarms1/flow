@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #files1 = glob.glob(sys.argv[1]+"/*csv")
-files1 = glob.glob("data/exp2_res/*csv")
+files1 = glob.glob("data/"+str(sys.argv[1])+"/*csv")
 files1.sort(key=os.path.getmtime)
 
-#params = sys.argv[2]
-#num = int(sys.argv[3])
+params = str(sys.argv[2])
+num = int(sys.argv[3])
 
-params = "newSimIDMParams.csv"
-num = 7
+#params = "newSimIDMParams.csv"
+#num = 7
 
 counts_list = []
 avg_counts_list = []

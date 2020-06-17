@@ -86,7 +86,7 @@ def getError(counts):
 
 def plotGraph(yvals, title, vals, figName):
     for i in range(len(yvals)):
-        plt.plot([60*i for i in range(len(yvals[i]))], yvals[i], label=vals[i]) #need to update the time period
+        plt.plot([15*i for i in range(len(yvals[i]))], yvals[i], label=vals[i]) #need to update the time period
         plt.legend(loc="best")
         plt.xlabel("Time (s)")
         plt.ylabel("Car Counts (units)")

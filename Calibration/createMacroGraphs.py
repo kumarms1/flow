@@ -3,11 +3,15 @@ import os, csv, sys
 import matplotlib.pyplot as plt
 import numpy as np
 
-files1 = glob.glob(sys.argv[1]+"/*csv")
+#files1 = glob.glob(sys.argv[1]+"/*csv")
+files1 = glob.glob("data/exp2_res/*csv")
 files1.sort(key=os.path.getmtime)
 
-params = sys.argv[2]
-num = int(sys.argv[3])
+#params = sys.argv[2]
+#num = int(sys.argv[3])
+
+params = "newSimIDMParams.csv"
+num = 7
 
 counts_list = []
 avg_counts_list = []
@@ -26,6 +30,7 @@ for file in files1:
 with open(params, newline='') as f:
     reader = csv.reader(f)
     params_list = list(reader)
+
 
 def getParamVals(params_list, index):
     if index == 0: #a
@@ -57,8 +62,9 @@ noise_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or 
 v0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (3*num)  < i < (4*num+1)  ) )]
 T_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (4*num)  < i < (5*num+1) ) )]
 delta_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (5*num)  < i <  (6*num+1) ) )]
-s0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (6*num)  < i <  (num+1) ) )]
-random_counts = counts_list[36]
+s0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (6*num)  < i <  (7*num+1) ) )]
+#random_counts = counts_list[36]
+
 
 def getError(counts):
     for i in counts:
@@ -96,6 +102,5 @@ plotGraph(v0_counts,"Varying the \"v0\" parameter", getParamVals(params_list,3) 
 plotGraph(T_counts, "Varying the \"T\" parameter", getParamVals(params_list,4) ,"T_params")
 plotGraph(delta_counts, "Varying the \"delta\" parameter", getParamVals(params_list,5) ,"delta_params")
 plotGraph(s0_counts, "Varying the \"s0\" parameter", getParamVals(params_list,6) ,"s0_params")
-
 #plotGraph([counts_list[0],random_counts])
 

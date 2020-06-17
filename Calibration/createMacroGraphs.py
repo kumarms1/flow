@@ -7,6 +7,7 @@ files1 = glob.glob(sys.argv[1]+"/*csv")
 files1.sort(key=os.path.getmtime)
 
 params = sys.argv[2]
+num = int(sys.argv[3])
 
 counts_list = []
 avg_counts_list = []
@@ -28,35 +29,35 @@ with open(params, newline='') as f:
 
 def getParamVals(params_list, index):
     if index == 0: #a
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if i < 6]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if i < (num+1)]
         return p
     elif index == 1: #b
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (5 < i < 11) )]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (num < i < (2*num+1) ) ) ]
         return p
     elif index == 2: #noise
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (10 < i < 16) )]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  ( (2*num) < i < ((3*num+1) )) )]
         return p
     elif index == 3: #v0
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (15 < i < 21) )]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  ( (3*num)  < i < (4*num+1)  ) )]
         return p
     elif index == 4: #T
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (20 < i < 26) )]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  ((4*num) < i < (5*num+1)  ) )]
         return p
     elif index == 5: #delta
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (25 < i < 31) )]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  ( (5*num) < i < (6*num+1)  ) )]
         return p
     elif index == 6: #s0
-        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  (30 < i < 36) )]
+        p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  ( (6*num) < i < (7*num +1)) )]
         return p
 
 # reading the counts
-a_counts = [counts_list[i] for i in range(len(counts_list)) if i < 6]
-b_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  (5 < i < 11) )]
-noise_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  (10 < i < 16) )]
-v0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  (15 < i < 21) )]
-T_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  (20 < i < 26) )]
-delta_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  (25 < i < 31) )]
-s0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  (30 < i < 36) )]
+a_counts = [counts_list[i] for i in range(len(counts_list)) if i < (num+1) ]
+b_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( num  < i < (2*num+1)  ) )]
+noise_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (2*num)  < i < (3*num+1)  ) )]
+v0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (3*num)  < i < (4*num+1)  ) )]
+T_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (4*num)  < i < (5*num+1) ) )]
+delta_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (5*num)  < i <  (6*num+1) ) )]
+s0_counts = [counts_list[i] for i in range(len(counts_list)) if (  (i==0) or  ( (6*num)  < i <  (num+1) ) )]
 random_counts = counts_list[36]
 
 def getError(counts):
@@ -79,7 +80,7 @@ def getError(counts):
 
 def plotGraph(yvals, title, vals, figName):
     for i in range(len(yvals)):
-        plt.plot([30*i for i in range(len(yvals[i]))], yvals[i], label=vals[i])
+        plt.plot([30*i for i in range(len(yvals[i]))], yvals[i], label=vals[i]) #need to update the time period
         plt.legend(loc="best")
         plt.xlabel("Time (s)")
         plt.ylabel("Car Counts (units)")

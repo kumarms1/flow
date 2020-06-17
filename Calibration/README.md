@@ -65,6 +65,13 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 ![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_60/delta_params.png)
 ![s](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp2_60/s0_params.png)
 
+
+## Insights
+
+The data sugguests that the parameters "a", "b", "v0" and "delta" do not affect the macroscopic property of car counts significantly. However, macroscopic quantity is sensitive to the "T" parameter. The s0 data shows that there is a certain threshold after which there is a significant change in macro data implying a quantum model.
+
+Things I don't understand: How T and counts are related (there seems to be no strong trend), how the fragmentation value for s0 is determined. Why the car counts in the last period are the same.
+
 ## TO DO
 - [x] create reference data file from default paramter set
 - [x] generate 7 sim data files for analysis

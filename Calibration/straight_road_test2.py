@@ -67,9 +67,9 @@ accel_data = (IDMController, {'a':a,'b':b,'noise':noise, 'v0':v0, 'T':T, 'delta'
 
 def setSpeedFlow( fl ):
     if fl:
-        return [25.8,random.uniform(1500,2500)]
+        return [25.8,random.uniform(1900,2100)]
     else:
-        return [random.uniform(20,30),2006]
+        return [random.uniform(22,27),2006]
 
 traffic_speed = setSpeedFlow(flag)
 traffic_flow = setSpeedFlow(flag)[1]

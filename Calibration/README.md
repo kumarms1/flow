@@ -69,9 +69,9 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 - [x] create reference data file from default paramter set
 - [x] generate 7 sim data files for analysis
 - [x] write script to plot generate macroscopic information from the data and plots necessary graphs
-- [ ] incorporate the error metrics
 - [x] analyze data for different data taking time intervals
 - [x] analyze data after trimming first 60 seconds and last 30 seconds
+- [ ] incorporate the error metrics
 - [ ] simulate cases with same IDM paramaters but different speed and inflow parameters
 - [ ] make the plotting and data analysis code more user friendly/general use
 - [ ] update README.md and documentation

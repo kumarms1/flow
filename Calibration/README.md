@@ -30,7 +30,6 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 ### Results when looking at data every 15 seconds
 ![a](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/a_params.png)
 ![b](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/b_params.png)
-![n](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/noise_params.png)
 ![v](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/v0_params.png)
 ![t](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/T_params.png)
 ![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/delta_params.png)
@@ -40,7 +39,6 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 ### Results when looking at data every 30 seconds
 ![a](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/a_params.png)
 ![b](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/b_params.png)
-![n](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/noise_params.png)
 ![v](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/v0_params.png)
 ![t](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/T_params.png)
 ![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/delta_params.png)
@@ -50,7 +48,6 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 ### Results when looking at data every 60 seconds
 ![a](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/a_params.png)
 ![b](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/b_params.png)
-![n](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/noise_params.png)
 ![v](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/v0_params.png)
 ![t](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/T_params.png)
 ![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/delta_params.png)
@@ -58,10 +55,11 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 
 
 ## Insights
+The geometry of the counts data with the fidelity of data taking is noteworthy. a and b paramaters for the most part don't show any effect on the counts data, delta shows very slight change, so does s0. Interestingly, at longer data taking times, the distinction in v0 values become more apparant and that between s0 diminishes.
 
-The data sugguests that the parameters "a", "b", "v0" and "delta" do not affect the macroscopic property of car counts significantly. However, macroscopic quantity is sensitive to the "T" parameter. The s0 data shows that there is a certain threshold after which there is a significant change in macro data implying a quantum model.
+T seems to be the only paramater that causes significant changes to the macroscopic perceieved data.
 
-Things I don't understand: How T and counts are related (there seems to be no strong trend), how the fragmentation value for s0 is determined. Why the car counts in the last period are the same.
+Things I don't understand: 
 
 ## TO DO
 - [x] create reference data file from default paramter set

@@ -31,6 +31,20 @@ Make sure the name of the dataDirectory is in the format exp(some number)_data
 
 ```
 
+<table>
+  <tr>
+    <td>First Screen Page</td>
+     <td>Holiday Mention</td>
+     <td>Present day in purple and selected day in pink</td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/Screenshot_1582745092.png" width=270 height=480></td>
+    <td><img src="screenshots/Screenshot_1582745125.png" width=270 height=480></td>
+    <td><img src="screenshots/Screenshot_1582745139.png" width=270 height=480></td>
+  </tr>
+ </table>
+
+
 # Preliminary Results
 
 The simulation was conducted on a one lane road of length 1600 meters for 300 seconds with vehicles with inflow speed 26.8 and flow 2006.
@@ -103,7 +117,9 @@ T seems to be the only paramater that causes significant changes to the macrosco
 - [x] write script to plot generate macroscopic information from the data and plots necessary graphs
 - [x] analyze data for different data taking time intervals
 - [x] analyze data after trimming first 60 seconds and last 30 seconds
+- [x] make the plotting and data analysis code more user friendly/general use
 - [x] simulate cases with same IDM paramaters but different speed and inflow parameters
 - [ ] incorporate the error metrics
-- [ ] make the plotting and data analysis code more user friendly/general use
 - [ ] update README.md and documentation
+- [ ] simulate the congested regime with both waves and no waves
+- [ ] conduct data analysis for that regime

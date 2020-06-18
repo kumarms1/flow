@@ -122,6 +122,10 @@ T seems to be the only paramater that causes significant changes to the macrosco
  </table>
 
 ## Insights
+a and b parameters don't seem to affect the average velocity significantly. v0 shows that longer data taking periods,the values converge based on some discrete model, T is still the most sensitive paramter even for average velocity. The distinction between the delta and s0 parameters and the average velocity becomes more prominent at longer data taking periods.
+
+## Overall Observations
+a and b have very minute effect on macro quantities. T seems to play a consequential role in determining macro quantities. Certain parameters cannot be discerned at higher fidelites but at longer data taking period becomes distinct (v0, s0 and delta for average velocity) (v0 and delta for counts). s0 behaves interestingly in the sense that at lower fidelites it becomes indifferent wrt the count data but more distinct wrt to average velocity data. This feature may be beneficial when it comes to optimization routines.
 
 ## TO DO
 - [x] create reference data file from default paramter set
@@ -131,6 +135,7 @@ T seems to be the only paramater that causes significant changes to the macrosco
 - [x] analyze data after trimming first 60 seconds and last 30 seconds
 - [x] make the plotting and data analysis code more user friendly/general use
 - [x] simulate cases with same IDM paramaters but different speed and inflow parameters
+- [ ] look at data at 90 seconds range and affect on delta and s0 and macro parameters
 - [ ] incorporate the error metrics
 - [ ] update README.md and documentation
 - [ ] simulate the congested regime with both waves and no waves

@@ -25,15 +25,7 @@ do
 done < $INPUT
 IFS=$OLDIFS
 
-echo "All data taking is complete"   
-#mkdir data/$2
-#echo "Created data/$2 directory for microsim data storage"
-#mkdir data/$3
-#mv data/*csv data/$3
-#echo "Created data/$3 directory for macroscopic data storage"
-#echo "Calculating counts data..."
-#python3 getMacroData.py data/$2 data/$3 $5
-#echo "Macro data collected!"
-#python3 createMacroGraphs.py $3 $1 $4
-#echo "All the graphs stored in the figs/ directory"
-#echo "Analysis complete!"
+echo "All data taking is complete"  
+
+#process data to get macro data
+#create graphs

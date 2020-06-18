@@ -17,11 +17,19 @@ python generate_data.py num_of_simulations csvName.csv
 ```
 The generate_data.py script allows the random generation of IDM paramters within certain bounds, it also allows more controlled fine tuning of which parameter needs to be changed and which needs to be kept constant. The command shown creates a data file - csvName.csv - which has num_of_simulations variations of a single parameter for each parameter in the IDM.
 
+
 ## To run multiple sims
 ```bash
-. automate.sh num_of_sims csvFileName.csv dataDirectory macroDataDirectory
+. automate.sh num_of_sims csvFileName.csv dataDirectory
 ```
 The above command will generate the IDM parameter data, run the corresponding simulation for that data set and create the microsimulation csv files in the data/dataDirectory directory and the resultant macroscopic data in the data/macroData directory. 
+
+```
+Some Naming Conventions:
+Make sure the name of the csvName is in the format IDMParams_exp(some number).csv 
+Make sure the name of the dataDirectory is in the format exp(some number)_data 
+
+```
 
 ## Preliminary Results
 

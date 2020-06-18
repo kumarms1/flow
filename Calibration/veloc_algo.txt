@@ -1,0 +1,5 @@
+high level algo:
+1) look at a certain stretch on the road (e.g. 300 m to 700 m)
+2) for X seconds extract the velocity information of each car that traversed that stretch of road
+3) get average velocity for each car and then calculate the average velocity of all cars
+4) store the aggregate average velocity and use this information to plot the graphs

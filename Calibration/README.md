@@ -43,9 +43,29 @@ Make sure the name of the dataDirectory is in the format exp(some number)_data
     <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/a_params.png" width=333 height=350></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/a_params.png" width=333 height=350></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/a_params.png" width=333 height=350></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/a_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/b_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/b_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/b_params.png" width=333 height=350></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/v0_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/v0_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/v0_params.png" width=333 height=350></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/T_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/T_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/T_params.png" width=333 height=350></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/delta_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/delta_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/delta_params.png" width=333 height=350></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_15/s0_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_30/s0_params.png" width=333 height=350></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/exp4_res_60/s0_params.png" width=333 height=350></td>
   </tr>
  </table>
 

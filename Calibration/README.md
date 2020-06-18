@@ -67,6 +67,7 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 ## Insights
 The geometry of the counts data with the fidelity of data taking is noteworthy. a and b paramaters for the most part don't show any effect on the counts data, delta shows very slight change, so does s0. Interestingly, at longer data taking times, the distinction in v0 values become more apparant and that between s0 diminishes.
 
+T seems to be the only paramater that causes significant changes to the macroscopic perceieved data.
 
 ## Average Speed Data:
 
@@ -94,9 +95,7 @@ The geometry of the counts data with the fidelity of data taking is noteworthy. 
 ![d](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp4/fidelity_60/delta_params_velocity.png)
 ![s](https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp4/fidelity_60/s0_params_velocity.png)
 
-T seems to be the only paramater that causes significant changes to the macroscopic perceieved data.
-
-Things I don't understand: 
+## Insights
 
 ## TO DO
 - [x] create reference data file from default paramter set

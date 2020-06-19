@@ -180,6 +180,12 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
  </table>
 
 ## Insights
+"a": at lower fidelities the macroscopic behavior converges
+"b": some convergence at lower fidelities. Interesting behavior at 1.3 and 1.38 values. Noise may be responsible for differences.
+"v0": positive distinct relationship, gets better at lower fidelities.
+"T": at higher fidelities small differences in values are observable (2.63 and 2.89). This trend holds overall.
+"delta":positive distinct relationship.
+"s0": lower fidelity subtle differences observable.
 
 ## Average Speed Data:
 
@@ -222,6 +228,12 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
  </table>
 
 ## Insights
+"a": distinct spread as compared to free flow.
+"b": distinct spread as compared to free flow. the value 2 seems to be a local minima as values on both ends result in lower average velocities.
+"v0": distinct values as compared to free flow regime where it seemed to be discrete bands. overall positive relationship
+"T": not as strong distinctions
+"delta": strong positive distinction
+"s0": 2 seems to be a local minima. not as strong distinctions.
 
 ## Overall Observations
 
@@ -270,6 +282,12 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
  </table>
 
 ## Insights
+"a": almost same overall trends as congested waves regime
+"b": almost same overall trends as congested waves regime
+"v0": almost same overall trends as congested waves regime
+"T": parameter defining behavior
+"delta": quantum model like parameterization
+"s0": similar to congested waves regime
 
 ## Average Speed Data:
 
@@ -312,8 +330,17 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
  </table>
 
 ## Insights
+"a": similar to congested waves
+"b": 2 no longer a minima. indistinguishable spread.
+"v0": similar to congested waves.
+"T": good distinction values inverse trend
+"delta": strong distinction values postive trend
+"s0": 2 is not a local minima like the congested wave regime. not as strong distinctions.
 
 ## Overall Observations
+
+# Observations
+30 seconds and 60 seconds data together help retrieve parametric information. The geometry of change may also point to the regime (counts). Using max, min, average, slopes as calibration parameters. 
 
 ## TO DO
 - [x] create reference data file from default paramter set
@@ -326,4 +353,5 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 - [x] simulate the congested regime with both waves and no waves
 - [ ] look at data at 90 seconds range and affect on delta and s0 and macro parameters
 - [ ] incorporate the error metrics
+- [ ] t delta swap fix exp4
 - [ ] update README.md and documentation

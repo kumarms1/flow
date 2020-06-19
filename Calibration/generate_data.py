@@ -1,5 +1,6 @@
 """
 author: Sadman Ahmed Shanto
+change the defaultIDM params for each regime
 """
 import random
 import csv
@@ -7,6 +8,8 @@ import sys
 
 #default params
 defaultIDM = [1,1.5,0,30,1,4,2] #a,b,noise,v0,T,delta,s0, experiment_number=0 (default)
+defaultIDM_congestedWaves = [1.3, 2.0, 0.1, 30.0, 4.0, 1.0, 2.0]
+defaultIDM_congestedNoWaves = [2.3, 2.0, 0.1, 30.0, 4.0, 1.0, 2.0]
 defaultCF = [2.6,4.5,0.5,1.0,2.5,30,1.0,0.1,0.5] # accel, decel, sigma, tau, minGap, maxSpeed, speedFactor, speedDev, impatience 
 #defaultEnv = [] #maxAcc, maxDec, targetVelocity
 #defaultNet = []
@@ -14,7 +17,9 @@ defaultCF = [2.6,4.5,0.5,1.0,2.5,30,1.0,0.1,0.5] # accel, decel, sigma, tau, min
 defaultParams = [defaultIDM, defaultCF]
 
 def changeIDMparam(index):
-    IDMParamSet = defaultIDM[:] 
+  #  IDMParamSet = defaultIDM[:]  #for default free flow regime  
+  #  IDMParamSet = defaultIDM_congestedWaves[:]  #for default congested waves regime
+    IDMParamSet = defaultIDM_congestedNoWaves[:]  #for default congested no waves regime
     if index == 0: #a
         IDMParamSet[index] = random.uniform(1,4)
     elif index == 1: #b
@@ -131,10 +136,21 @@ def createIDMInputDefault():
     with open( sys.argv[2], 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerows([defaultIDM])
+
+def createIDMCongestedWavesInputDefault():
+    with open( sys.argv[2], 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows([defaultIDM_congestedWaves])
+
+def createIDMCongestedNoWavesInputDefault():
+    with open( sys.argv[2], 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows([defaultIDM_congestedNoWaves])
 #main
 def __main__():
     num = int(sys.argv[1])
-    createIDMInputDefault()
+  #  createIDMInputDefault()
+    createIDMCongestedNoWavesInputDefault()
     for i in range(len(defaultIDM)):
         createIDMInputOneParameterRandomly(i,num)
     createIDMInputRandomly(1)

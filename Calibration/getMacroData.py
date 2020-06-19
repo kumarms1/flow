@@ -1,6 +1,6 @@
 """
 usage: python3 getMacroData.py name_of_data_dir csvFileName fidelity params_file
-example: p3 getMacroData.py exp4_data exp4_macro_15 15 IDMParams_exp4.csv 
+example: p3 getMacroData.py exp4_data exp4_macro_15 15 ImMParams_exp4.csv 
 """
 
 #import Process_Flow_Outputs and other libraries

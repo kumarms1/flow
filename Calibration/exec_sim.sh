@@ -18,7 +18,7 @@ do
 	echo -e "\tAcceleration exponent : $delta"
 	echo -e "\tLinear Jam Distance : $s0"
         echo " Starting simulation with the given parameters ... "
-        python3 straight_road_test.py $a $b $noise $v0 $T $delta $s0 $2
+        python3 Highway_Downstream_Congestion.py $a $b $noise $v0 $T $delta $s0 $2
         echo " Simulation complete!"
         echo "==================================================="
 	echo ""

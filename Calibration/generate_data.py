@@ -1,15 +1,17 @@
 """
 author: Sadman Ahmed Shanto
-change the defaultIDM params for each regime
+usage: p3 generate_data.py num_of_sims csvFileName.csv
+note: change the defaultIDM params for each regime
 """
 import random
 import csv
 import sys
+import numpy as np
 
 #default params
 defaultIDM = [1,1.5,0,30,1,4,2] #a,b,noise,v0,T,delta,s0, experiment_number=0 (default)
-defaultIDM_congestedWaves = [1.3, 2.0, 0.1, 30.0, 4.0, 1.0, 2.0]
-defaultIDM_congestedNoWaves = [2.3, 2.0, 0.1, 30.0, 4.0, 1.0, 2.0]
+defaultIDM_congestedWaves = [1.3, 2.0, 0.1, 30.0,1.0,4.0,2.0]
+defaultIDM_congestedNoWaves = [2.3, 2.0, 0.1, 30.0,1.0,4.0,2.0]
 defaultCF = [2.6,4.5,0.5,1.0,2.5,30,1.0,0.1,0.5] # accel, decel, sigma, tau, minGap, maxSpeed, speedFactor, speedDev, impatience 
 #defaultEnv = [] #maxAcc, maxDec, targetVelocity
 #defaultNet = []
@@ -146,13 +148,62 @@ def createIDMCongestedNoWavesInputDefault():
     with open( sys.argv[2], 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerows([defaultIDM_congestedNoWaves])
+
+def createIDMInputParameterUniformly(index,num, defaulData):
+    with open( sys.argv[2], 'a', newline='') as file:
+        writer = csv.writer(file)
+        IDMParamSet = defaulData[:]
+        if index == 0: #a
+            options = list(np.linspace(1,5,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        elif index == 1: #b
+            options = list(np.linspace(1,5,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        elif index == 2:  #noise
+            options = list(np.linspace(0,2,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        elif index == 3:  #v0
+            options = list(np.linspace(15,30,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        elif index == 4:  #T
+            options = list(np.linspace(1,4,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        elif index == 5:  #delta
+            options = list(np.linspace(2,6,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        elif index == 6:  #s0
+            options = list(np.linspace(1,5,num))
+            while len(options)!=0:
+                IDMParamSet[index] = options.pop(0)
+                writer.writerows([IDMParamSet])
+        return IDMParamSet
+
 #main
-def __main__():
+def main_og():
     num = int(sys.argv[1])
-  #  createIDMInputDefault()
+    #createIDMInputDefault()
     createIDMCongestedNoWavesInputDefault()
     for i in range(len(defaultIDM)):
         createIDMInputOneParameterRandomly(i,num)
     createIDMInputRandomly(1)
 
-__main__()
+def main_uni():
+    num = int(sys.argv[1])
+    createIDMCongestedNoWavesInputDefault()
+    for i in range(len(defaultIDM)):
+        createIDMInputParameterUniformly(i,num,defaultIDM_congestedNoWaves)
+    createIDMInputRandomly(1)
+
+main_uni()

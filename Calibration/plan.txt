@@ -1,0 +1,3 @@
+1) free flow data sim -> change automate.sh, exec_sim.sh, genParams.py, straightroad.py
+2) congested waves -> change automate.sh, exec_sim.sh, genParams.py, highway.py
+3) congested no waves -> change automate.sh, exec_sim.sh, genParams.py, highway.py

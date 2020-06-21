@@ -104,7 +104,7 @@ flow_params = dict(
     ),
     # environment related parameters (see flow.core.params.EnvParams)
     env=EnvParams(
-        horizon=500,
+        horizon=300,
         additional_params=ADDITIONAL_ENV_PARAMS.copy(),
     ),
     # network-related parameters (see flow.core.params.NetParams and the

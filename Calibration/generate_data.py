@@ -1,7 +1,6 @@
 """
 author: Sadman Ahmed Shanto
-usage: p3 generate_data.py num_of_sims csvFileName.csv
-note: change the defaultIDM params for each regime
+usage: p3 generate_data.py num_of_sims csvFileName.csv regime
 """
 import random
 import csv
@@ -201,9 +200,21 @@ def main_og():
 
 def main_uni():
     num = int(sys.argv[1])
-    createIDMCongestedNoWavesInputDefault()
-    for i in range(len(defaultIDM)):
-        createIDMInputParameterUniformly(i,num,defaultIDM_congestedNoWaves)
-    createIDMInputRandomly(1)
+    regime = str(sys.argv[3])
+    if regime=="free":
+        createIDMInputDefault()
+        for i in range(len(defaultIDM)):
+            createIDMInputParameterUniformly(i,num,defaultIDM)
+        createIDMInputRandomly(1)
+    elif regime=="congestedWaves":
+        createIDMCongestedWavesInputDefault()
+        for i in range(len(defaultIDM)):
+            createIDMInputParameterUniformly(i,num,defaultIDM_congestedWaves)
+        createIDMInputRandomly(1)
+    elif regime=="congestedNoWaves":
+        createIDMCongestedNoWavesInputDefault()
+        for i in range(len(defaultIDM)):
+            createIDMInputParameterUniformly(i,num,defaultIDM_congestedNoWaves)
+        createIDMInputRandomly(1)
 
 main_uni()

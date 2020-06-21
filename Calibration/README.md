@@ -351,7 +351,7 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 - [x] make the plotting and data analysis code more user friendly/general use
 - [x] simulate cases with same IDM paramaters but different speed and inflow parameters
 - [x] simulate the congested regime with both waves and no waves
-- [ ] look at data at 90 seconds range and affect on delta and s0 and macro parameters
+- [ ] reanalyze the results and fix the plot scales 
 - [ ] incorporate the error metrics
 - [ ] t delta swap fix exp4
 - [ ] update README.md and documentation

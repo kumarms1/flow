@@ -30,7 +30,7 @@ s0 = round(float(sys.argv[7]),2)
 
 accel_data = (IDMController, {'a':a,'b':b,'noise':noise, 'v0':v0, 'T':T, 'delta':delta, 's0':s0})
 traffic_speed = 25.8
-traffic_flow = 200
+traffic_flow = 2006
 
 vehicles = VehicleParams()
 vehicles.add(
@@ -74,7 +74,7 @@ flow_params = dict(
     simulator='traci',
     # sumo-related parameters (see flow.core.params.SumoParams)
     sim=SumoParams(
-        sim_step=0.5,
+        sim_step=0.4,
         render=False,
         lateral_resolution=0.1,
         emission_path='data/'+str(sys.argv[8]),

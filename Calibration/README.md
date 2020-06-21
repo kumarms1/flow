@@ -53,34 +53,34 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
     <td>Counts data: 60 seconds fidelity</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/a_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/a_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/a_params.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/a_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/a_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/a_params_counts.png" width=400 height=320></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/b_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/b_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/b_params.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/b_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/b_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/b_params_counts.png" width=400 height=320></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/v0_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/v0_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/v0_params.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/v0_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/v0_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/v0_params_counts.png" width=400 height=320></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/T_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/T_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/T_params.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/T_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/T_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/T_params_counts.png" width=400 height=320></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/delta_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/delta_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/delta_params.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/delta_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/delta_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/delta_params_counts.png" width=400 height=320></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/s0_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/s0_params.png" width=400 height=320></td>
-    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/s0_params.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/s0_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/s0_params_counts.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/s0_params_counts.png" width=400 height=320></td>
   </tr>
  </table>
 

@@ -67,6 +67,38 @@ def getParamVals(params_list, index, num):
           p =  [round(float(params_list[i][index]),2) for i in range(len(params_list)) if (  (i==0) or  ( (6*num) < i < (7*num +1)) )]
           return p
 
+def find_min_list_size(lists):
+    list_len = [len(i) for i in lists]
+    return min(list_len)
+
+
+def getRelationships(macroArray, paramSet, param, macro):
+    #determine the min size of array in macroArray
+    minSize = find_min_list_size(macroArray)
+    avg = []
+    maxD = []
+    minD = []
+    figName = param+"_"+macro+"_stats"
+    for arr in macroArray:
+        #trim all arrays in the macroArray based on that number
+        while len(arr) > minSize:
+            arr.pop()
+        #calculate average based on that number
+        avg.append(sum(arr)/len(arr))
+        #calculate min and max based on that number
+        maxD.append(max(arr))
+        minD.append(min(arr))
+        # plot against paramSet
+    plt.scatter(paramSet, avg, label="mean")
+    plt.scatter(paramSet, maxD, label="max")
+    plt.scatter(paramSet, minD, label="min")
+    plt.xlabel("Parameter: " + param)
+    plt.ylabel(macro)
+    plt.legend()
+    plt.title("Effect of \"" + param + "\" on macro data: " + macro)
+    plt.savefig(fileExt+"/"+figName+".png")
+    plt.show()
+
 #read data
 results = []
 with open(dataFile, 'r') as f:
@@ -91,6 +123,7 @@ T_counts = [counts[i] for i in range(len(counts)) if (  (i==0) or  ( (4*num)  < 
 delta_counts = [counts[i] for i in range(len(counts)) if (  (i==0) or  ( (5*num)  < i <  (6*num+1) ) )]
 s0_counts = [counts[i] for i in range(len(counts)) if (  (i==0) or  ( (6*num)  < i <  (7*num+1) ) )]
 
+#all_counts_data = [a_counts,b_counts,v0_counts,T_counts,delta_counts,s0_counts]
 
 # reading the velocity for IDM params
 a_velocity = [velocity[i] for i in range(len(velocity)) if i < (num+1) ]
@@ -101,6 +134,23 @@ T_velocity = [velocity[i] for i in range(len(velocity)) if (  (i==0) or  ( (4*nu
 delta_velocity = [velocity[i] for i in range(len(velocity)) if (  (i==0) or  ( (5*num)  < i <  (6*num+1) ) )]
 s0_velocity = [velocity[i] for i in range(len(velocity)) if (  (i==0) or  ( (6*num)  < i <  (7*num+1) ) )]
 
+#all_velocity_data = [a_velocity,b_velocity,v0_velocity,T_velocity,delta_velocity,s0_velocity]
+
+getRelationships(a_counts, getParamVals(params,0,num), "a", "Counts") 
+getRelationships(b_counts, getParamVals(params,1,num), "b", "Counts") 
+getRelationships(v0_counts, getParamVals(params,3,num), "v0", "Counts") 
+getRelationships(T_counts, getParamVals(params,4,num), "T", "Counts") 
+getRelationships(delta_counts, getParamVals(params,5,num), "delta", "Counts") 
+getRelationships(s0_counts, getParamVals(params,6,num), "s0", "Counts") 
+
+
+getRelationships(a_velocity, getParamVals(params,0,num), "a", "Velocity") 
+getRelationships(b_velocity, getParamVals(params,1,num), "b", "Velocity") 
+getRelationships(v0_velocity, getParamVals(params,3,num), "v0", "Velocity") 
+getRelationships(T_velocity, getParamVals(params,4,num), "T", "Velocity") 
+getRelationships(delta_velocity, getParamVals(params,5,num), "delta", "Velocity") 
+getRelationships(s0_velocity, getParamVals(params,6,num), "s0", "Velocity") 
+"""
 #plot counts graphs
 plotCountsGraph(a_counts, "Varying the \"a\" parameter", getParamVals(params,0,num) ,"a_params_counts")
 plotCountsGraph(b_counts, "Varying the \"b\" parameter", getParamVals(params,1,num) ,"b_params_counts")
@@ -116,6 +166,10 @@ plotVelocityGraph(v0_velocity, "Varying the \"v0\" parameter", getParamVals(para
 plotVelocityGraph(T_velocity, "Varying the \"T\" parameter", getParamVals(params,4,num) ,"T_params_velocity")
 plotVelocityGraph(delta_velocity, "Varying the \"delta\" parameter", getParamVals(params,5,num) ,"delta_params_velocity")
 plotVelocityGraph(s0_velocity, "Varying the \"s0\" parameter", getParamVals(params,6,num) ,"s0_params_velocity")
+"""
+
+
+
 
 """
 popping last run

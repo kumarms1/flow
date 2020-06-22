@@ -396,6 +396,129 @@ Most parameters don't help in identifying the regime, the only observable differ
 ### For waves and no waves regime:
 Counts data cannot be used to differentiate between congested with and without waves regime. The only difference was the higher sensentivity of velocity to delta values in the waves regime.
 
+# Statistical Analysis
+
+## Counts data at fidelity: 15 Seconds
+<table>
+  <tr>
+    <td>Free Flow Regime</td>
+    <td>Congested (Waves) Regime</td>
+    <td>Congested (No Waves) Regime</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_15/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_15/a_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_15/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_15/b_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_15/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_15/v0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_15/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_15/T_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_15/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_15/delta_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_15/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_15/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_15/s0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+
+## Counts data at fidelity: 30 Seconds
+<table>
+  <tr>
+    <td>Free Flow Regime</td>
+    <td>Congested (Waves) Regime</td>
+    <td>Congested (No Waves) Regime</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_30/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_30/a_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_30/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_30/b_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_30/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_30/v0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_30/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_30/T_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_30/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_30/delta_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_30/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_30/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_30/s0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+
+## Counts data at fidelity: 60 Seconds
+
+<table>
+  <tr>
+    <td>Free Flow Regime</td>
+    <td>Congested (Waves) Regime</td>
+    <td>Congested (No Waves) Regime</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_60/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_60/a_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_60/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_60/b_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_60/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_60/v0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_60/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_60/T_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_60/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_60/delta_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp7freeFlow/fidelity_60/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp8congestedWaves/fidelity_60/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="https://github.com/shanto268/comprehensive_simulation_traffic_analysis_software/blob/master/figs/exp9congestedNoWaves/fidelity_60/s0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+
 ## TO DO
 - [x] create reference data file from default paramter set
 - [x] generate 7 sim data files for analysis

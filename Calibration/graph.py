@@ -95,7 +95,7 @@ def getRelationships(macroArray, paramSet, param, macro):
     plt.xlabel("Parameter: " + param)
     plt.ylabel(macro)
     plt.legend()
-    plt.title("Effect of \"" + param + "\" on macro data: " + macro)
+    plt.title("Effect of \"" + param + "\" on "+ macro + " at fidelity: " + str(fidelity))
     plt.savefig(fileExt+"/"+figName+".png")
     plt.show()
 

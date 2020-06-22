@@ -22,7 +22,7 @@ def list_slice(S, step):
 
 def plotCountsGraph(yvals, title, vals, figName):
       for i in range(len(yvals)):
-          plt.plot([fidelity*i for i in range(len(yvals[i]))], yvals[i], label=vals[i]) 
+          plt.plot([fidelity*i for i in range(len(yvals[i]))], yvals[i], '-o',label=vals[i])
           plt.legend(loc="best")
           plt.xlabel("Time Period (s)")
           plt.ylabel("Car Counts (units)")
@@ -33,7 +33,7 @@ def plotCountsGraph(yvals, title, vals, figName):
 
 def plotVelocityGraph(yvals, title, vals, figName):
       for i in range(len(yvals)):
-          plt.plot([fidelity*i for i in range(len(yvals[i]))], yvals[i], label=vals[i]) 
+          plt.plot([fidelity*i for i in range(len(yvals[i]))], yvals[i],'-o',label=vals[i]) 
           plt.legend(loc="best")
           plt.xlabel("Time Period (s)")
           plt.ylabel("Average Velocity (m/s)")

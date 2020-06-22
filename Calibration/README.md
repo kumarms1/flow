@@ -85,9 +85,12 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
  </table>
 
 ## Insights
-The geometry of the counts data with the fidelity of data taking is noteworthy. a and b paramaters for the most part don't show any effect on the counts data, delta shows very slight change, so does s0. Interestingly, at longer data taking times, the distinction in v0 values become more apparant and that between s0 diminishes.
-
-T seems to be the only paramater that causes significant changes to the macroscopic perceieved data.
+"a": doesn't affect macro data
+"b": doesn't affect macro data
+"v0":
+"T":
+"delta":
+"s0":
 
 ## Average Speed Data:
 
@@ -130,10 +133,14 @@ T seems to be the only paramater that causes significant changes to the macrosco
  </table>
 
 ## Insights
-a and b parameters don't seem to affect the average velocity significantly. v0 shows that longer data taking periods,the values converge based on some discrete model, T is still the most sensitive paramter even for average velocity. The distinction between the delta and s0 parameters and the average velocity becomes more prominent at longer data taking periods.
+"a":
+"b":
+"v0":
+"T":
+"delta":
+"s0":
 
 ## Overall Observations
-a and b have very minute effect on macro quantities. T seems to play a consequential role in determining macro quantities. Certain parameters cannot be discerned at higher fidelites but at longer data taking period becomes distinct (v0, s0 and delta for average velocity) (v0 and delta for counts). s0 behaves interestingly in the sense that at lower fidelites it becomes indifferent wrt the count data but more distinct wrt to average velocity data. This feature may be beneficial when it comes to optimization routines.
 
 # Preliminary Results for Congested (with Waves) Regime
 
@@ -340,7 +347,6 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 ## Overall Observations
 
 # Observations
-30 seconds and 60 seconds data together help retrieve parametric information. The geometry of change may also point to the regime (counts). Using max, min, average, slopes as calibration parameters. 
 
 ## TO DO
 - [x] create reference data file from default paramter set

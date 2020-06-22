@@ -202,13 +202,13 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 
 "b": no effect. same as free flow.
 
-"v0":
+"v0": similar behavior to free flow.
 
-"T":
+"T": similar behavior to free flow.
 
-"delta":
+"delta": similar behavior to free flow.
 
-"s0":
+"s0": all params lead to similar macro data results, unlike free flow there is no distinct behavior at s0 = 5
 
 
 
@@ -253,14 +253,20 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
  </table>
 
 ## Insights
-"a": distinct spread as compared to free flow.
-"b": distinct spread as compared to free flow. the value 2 seems to be a local minima as values on both ends result in lower average velocities.
-"v0": distinct values as compared to free flow regime where it seemed to be discrete bands. overall positive relationship
-"T": not as strong distinctions
-"delta": strong positive distinction
-"s0": 2 seems to be a local minima. not as strong distinctions.
+"a": similar to free flow with a little more spread at lower fidelities. 
+
+"b": similar to free flow with a little more spread at lower fidelities. 
+
+"v0": similar to free flow 
+
+"T": similar to free flow at higher fidelities, at lower fidelities greater scatter of initial macro points wrt to T params compared to free flow. 
+
+"delta": similar to free flow 
+
+"s0": closer scatter compared to free flow
 
 ## Overall Observations
+Most parameters don't help in identifying the regime, the only observable difference was the distict behavior for macro data at s0 = 5 in the two regime and the greater initial scatter of velocity fot T params in congested with waves regime compared to free flow.
 
 
 # Preliminary Results for Congested (no Waves) Regime
@@ -309,10 +315,15 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 
 ## Insights
 "a": almost same overall trends as congested waves regime
+
 "b": almost same overall trends as congested waves regime
+
 "v0": almost same overall trends as congested waves regime
-"T": parameter defining behavior
-"delta": quantum model like parameterization
+
+"T":  almost same overall trends as congested waves regime
+
+"delta": almost same overall trends as congested waves regime
+
 "s0": similar to congested waves regime
 
 ## Average Speed Data:
@@ -357,15 +368,33 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 
 ## Insights
 "a": similar to congested waves
-"b": 2 no longer a minima. indistinguishable spread.
+
+"b": similar to congested waves. 
+
 "v0": similar to congested waves.
-"T": good distinction values inverse trend
-"delta": strong distinction values postive trend
-"s0": 2 is not a local minima like the congested wave regime. not as strong distinctions.
+
+"T": similar to congested waves.
+
+"delta": not as similar to congested waves regime, delta paramaters not as sensentive at lower values. 
+
+"s0": similar to congested waves.
 
 ## Overall Observations
+Counts data cannot be used to differentiate between congested with and without waves regime. The only difference was the higher sensentivity of velocity to delta values in the waves regime.
 
-# Observations
+# Conclusions
+###For counts macro data:
+v0 and T are paramaters of interest. a and b do not affect results.
+
+###For velocity macro data:
+v0 and T are paramaters of interest. a and b do not affect results.
+
+###For free flow and congested regimes:
+
+Most parameters don't help in identifying the regime, the only observable difference was the distict behavior for macro data at s0 = 5 in the two regime and the greater initial scatter of velocity fot T params in congested with waves regime compared to free flow. There are, however, differences in absolute numbers of values but that may be attributed to the netwrok paramters: inflow rate and inflow speed.
+
+###For waves and no waves regime:
+Counts data cannot be used to differentiate between congested with and without waves regime. The only difference was the higher sensentivity of velocity to delta values in the waves regime.
 
 ## TO DO
 - [x] create reference data file from default paramter set
@@ -376,7 +405,7 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 - [x] make the plotting and data analysis code more user friendly/general use
 - [x] simulate cases with same IDM paramaters but different speed and inflow parameters
 - [x] simulate the congested regime with both waves and no waves
-- [ ] reanalyze the results, fix the plot scales, and think of better representation/metrics for analysis 
+- [ ] statistical metrics and analysis incorporation
+- [ ] implement calibration models using sim data
 - [ ] incorporate the error metrics
-- [ ] t delta swap fix exp4
 - [ ] update README.md and documentation

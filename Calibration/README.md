@@ -383,17 +383,17 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 Counts data cannot be used to differentiate between congested with and without waves regime. The only difference was the higher sensentivity of velocity to delta values in the waves regime.
 
 # Conclusions
-###For counts macro data:
+### For counts macro data:
 v0 and T are paramaters of interest. a and b do not affect results.
 
-###For velocity macro data:
+### For velocity macro data:
 v0 and T are paramaters of interest. a and b do not affect results.
 
-###For free flow and congested regimes:
+### For free flow and congested regimes:
 
 Most parameters don't help in identifying the regime, the only observable difference was the distict behavior for macro data at s0 = 5 in the two regime and the greater initial scatter of velocity fot T params in congested with waves regime compared to free flow. There are, however, differences in absolute numbers of values but that may be attributed to the netwrok paramters: inflow rate and inflow speed.
 
-###For waves and no waves regime:
+### For waves and no waves regime:
 Counts data cannot be used to differentiate between congested with and without waves regime. The only difference was the higher sensentivity of velocity to delta values in the waves regime.
 
 ## TO DO

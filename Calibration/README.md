@@ -86,11 +86,16 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
 
 ## Insights
 "a": doesn't affect macro data
+
 "b": doesn't affect macro data
-"v0":
-"T":
-"delta":
-"s0":
+
+"v0": shows positive relationship with macro data (max value)
+
+"T": shows inverse relationship with macro data (max value and gradient)
+
+"delta": paramaters affect on macro data is a function of the fidelity. Certain threshold over which all values converge.
+
+"s0": quantum phenomenon. There are certain values that lead to disparate effects on macro data.
 
 ## Average Speed Data:
 
@@ -133,14 +138,20 @@ The simulation was conducted on a one lane road of length 1600 meters for 300 se
  </table>
 
 ## Insights
-"a":
-"b":
-"v0":
-"T":
-"delta":
-"s0":
+"a": good close fit. Spread only observable at lower fidelity (longer data taking time)
+
+"b": good close fit. Spread only observable at lower fidelity (longer data taking time)
+
+"v0": distinct effect on macro data
+
+"T": certain optimal value observed at T=1 and incremental increases tend towards some fixed macro data point. Sensitive around the optimal value or lower value
+
+"delta": similar behavior trend as T, incremental increases in delta tend towards some fixed macro data point. Sensitive around the lower values
+
+"s0": incremental increases in s0 lead to larger decreases in macro data
 
 ## Overall Observations
+"a" and "b" do not contribute to any macro data. v0 helps identify both macro data from the param set, T is good for counts data and not so much for speed, delta shows different behavior for counts at different fidelities and is not helpful to distinguish paramater values from; for speed data, delta is somewhat distinguishable at lower values but converges at higher param values, s0 looks different at different fidelities for counts data and shows some evidence for different macro results past a threshold param value.  
 
 # Preliminary Results for Congested (with Waves) Regime
 
@@ -187,12 +198,19 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
  </table>
 
 ## Insights
-"a": at lower fidelities the macroscopic behavior converges
-"b": some convergence at lower fidelities. Interesting behavior at 1.3 and 1.38 values. Noise may be responsible for differences.
-"v0": positive distinct relationship, gets better at lower fidelities.
-"T": at higher fidelities small differences in values are observable (2.63 and 2.89). This trend holds overall.
-"delta":positive distinct relationship.
-"s0": lower fidelity subtle differences observable.
+"a": no effect. same as free flow.
+
+"b": no effect. same as free flow.
+
+"v0":
+
+"T":
+
+"delta":
+
+"s0":
+
+
 
 ## Average Speed Data:
 
@@ -243,6 +261,7 @@ The simulation was conducted on a one lane road of length 1600 meters for 500 se
 "s0": 2 seems to be a local minima. not as strong distinctions.
 
 ## Overall Observations
+
 
 # Preliminary Results for Congested (no Waves) Regime
 

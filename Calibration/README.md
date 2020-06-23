@@ -439,6 +439,10 @@ Counts data cannot be used to differentiate between congested with and without w
   </tr>
  </table>
 
+### Observations:
+v0 -> max and mean (slope and value at param value at which it converges) plateuing relationship
+T -> max and mean (exponential decay)
+delta -> differentiates free flow and congested regime (at s0 = 5)
 
 ### Counts data at fidelity: 30 Seconds
 <table>
@@ -479,6 +483,10 @@ Counts data cannot be used to differentiate between congested with and without w
   </tr>
  </table>
 
+### Observations:
+v0 -> max and mean (slope and value at param value at which it converges) plateuing relationship
+T -> max and mean (exponential decay)
+delta -> differentiates free flow and congested regime (at s0 = 5)
 
 ### Counts data at fidelity: 60 Seconds
 
@@ -520,6 +528,12 @@ Counts data cannot be used to differentiate between congested with and without w
   </tr>
  </table>
 
+### Observations:
+v0 -> max and mean (slope and value at param value at which it converges) plateuing relationship
+
+T -> max and mean (exponential decay)
+
+delta -> differentiates free flow and congested regime (at s0 = 5)
 
 ## Velocity Data:
 
@@ -645,6 +659,12 @@ Counts data cannot be used to differentiate between congested with and without w
 
 
 
+## General Notes
+delta has initial dips for congested regimes. in fidelity 15 and 30, velocity delta only dips in congested with waves.
+average s0 dips at higher params in free flow regime and not congested.
+min of T for velocity is good for identifying params at low fidelity
+at fidelity_60 average T function differentiates between free flow and congestion
+delta helps identify param set values (discontinuous at fidelity_60)
 
 
 ## TO DO

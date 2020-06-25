@@ -22,9 +22,9 @@ class HighwayFreeFlow:
     def __init__(self,params,fidelity=30):
       #  self.a = params[0]
       #  self.b = params[1]
-        self.a = 1
-        self.b = 1.5
-        self.delta = 4 
+        self.a = 2
+        self.b = 2
+        self.delta = 4
         self.v0 = params[0]
         self.T = params[1]
       #  self.delta =params[4]

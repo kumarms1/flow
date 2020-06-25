@@ -138,3 +138,27 @@ Optimization terminated successfully.
 
 This run has shown the highest change in a parameter out of all 
 previous runs (v0: 20 -> 26.33). Interestingly enough, this result is congruent with my sensitivity analysis, which implies that s0 doesn't affect count and also that from v0 >= 26 the counts data remains constant which may explain why the optimization routine didn't return the expected v0 value of 30. The T parameter which was originally set to the expected value was changed to 0.8 may be to ensure the fit is correct for the chosen value of v0. The output log shows that the routine increased the v0 the most only to converge to the 26.3 value and then it was changing the T and delta parameters. 
+
+## Optimizing T, v0 and s0 parameters with upper bound values as realistic parameters 
+
+Used the lower bound values as initial guess.
+
+```bash
+Optimization terminated successfully.
+         Current function value: 8.000000
+         Iterations: 22
+         Function evaluations: 79
+ final_simplex: (array([[18.        ,  1.05      ,  0.105     ],
+       [18.00000301,  1.05000301,  0.10499902],
+       [17.99994575,  1.04999457,  0.10499932],
+       [18.00000785,  1.04999844,  0.10499943]]), array([8., 8., 8., 8.]))
+           fun: 8.0
+       message: 'Optimization terminated successfully.'
+          nfev: 79
+           nit: 22
+        status: 0
+       success: True
+             x: array([18.   ,  1.05 ,  0.105])
+```
+The routine did not seem to be optimal at all with a poor performing local minima chosen as the solution. This further suggests the bumpy terrain of the search space.
+

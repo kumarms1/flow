@@ -12,7 +12,7 @@ import highway_free_flow as hff
 import numpy as np
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
-realistic_params = [30, 1, 2] # v0,T, s0
+realistic_params = [30, 3, 5] # v0,T, s0
 #
 measured_counts = np.array(hff.HighwayFreeFlow(realistic_params).getCountsData())
 

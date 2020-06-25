@@ -63,7 +63,7 @@ This suggests that the search space is bumpy with multiple minimas.
 
 The optimization routine went on for 2 hours before I force quit it, the log output showed that it was stuck at the same set of values for a long period of time.
 
-## Optimizing only T and v0 parameters
+## Optimizing only T, v0 and s0 parameters
 
 The optimization terminated successfully with the following output:
 
@@ -86,3 +86,55 @@ Optimization terminated successfully.
 ```
 
 While, the optimization did find solution it is most certainly a local one, since the parameters don't match the expected parameter set. The simulation however ran a lot faster. This result confirms the initial hypothesis of the search space being very bumpy.
+
+## Optimizing T, v0 and s0 parameters with delta = 2 instead of 4
+
+Used the lower bound values as initial guess.
+
+```bash
+Optimization terminated successfully.
+         Current function value: 7.000000
+         Iterations: 29
+         Function evaluations: 86
+ final_simplex: (array([[17.92540676,  1.08776601,  0.10099049],
+       [17.92542432,  1.08775289,  0.10099177],
+       [17.92535129,  1.0877661 ,  0.10099159],
+       [17.92545361,  1.08775929,  0.10099163]]), array([7., 7., 7., 7.]))
+           fun: 7.0
+       message: 'Optimization terminated successfully.'
+          nfev: 86
+           nit: 29
+        status: 0
+       success: True
+             x: array([17.92540676,  1.08776601,  0.10099049])
+```
+
+Reached a different local minima as predicted by Dr. Work. 
+
+ 
+## Optimizing T, v0 and s0 parameters with default IDM parameters
+
+Used the lower bound values as initial guess.
+
+Initial error was really high compared to other simulation tests.
+
+### Obeservation: zero error was recorded a couple of times but the optimization regime didn't stop. Does this confirm that the search space is flat like Dr. Work was talking about?
+
+Optimization terminated successfully.
+         Current function value: 0.000000
+         Iterations: 36
+         Function evaluations: 104
+ final_simplex: (array([[26.33333333,  0.8       ,  0.08      ],
+       [26.33330936,  0.79999911,  0.0800001 ],
+       [26.33331652,  0.79999933,  0.08000019],
+       [26.33332278,  0.79999711,  0.08000019]]), array([0., 0., 0., 0.]))
+           fun: 0.0
+       message: 'Optimization terminated successfully.'
+          nfev: 104
+           nit: 36
+        status: 0
+       success: True
+             x: array([26.33333333,  0.8       ,  0.08      ])
+
+This run has shown the highest change in a parameter out of all 
+previous runs (v0: 20 -> 26.33). Interestingly enough, this result is congruent with my sensitivity analysis, which implies that s0 doesn't affect count and also that from v0 >= 26 the counts data remains constant which may explain why the optimization routine didn't return the expected v0 value of 30. The T parameter which was originally set to the expected value was changed to 0.8 may be to ensure the fit is correct for the chosen value of v0. The output log shows that the routine increased the v0 the most only to converge to the 26.3 value and then it was changing the T and delta parameters. 

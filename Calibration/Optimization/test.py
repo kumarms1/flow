@@ -34,7 +34,8 @@ s0_bounds = (0.1,5)
 bnds = (a_bounds, b_bounds, v0_bounds, T_bounds, delta_bounds, s0_bounds)
 
 #initial guess
-guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
+#guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
+guess = [1,1.5,30,1,4,2]
 
 #optimize
 sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options={'disp':True})

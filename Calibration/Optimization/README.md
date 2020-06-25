@@ -65,4 +65,24 @@ The optimization routine went on for 2 hours before I force quit it, the log out
 
 ## Optimizing only T and v0 parameters
 
+The optimization terminated successfully with the following output:
 
+```bash
+Optimization terminated successfully.
+         Current function value: 1.000000
+         Iterations: 22
+         Function evaluations: 74
+ final_simplex: (array([[20.06770833,  0.99053819,  0.10315104],
+       [20.06772868,  0.99053786,  0.10314911],
+       [20.06771596,  0.99052993,  0.10315052],
+       [20.06765705,  0.99052955,  0.10315066]]), array([1., 1., 1., 1.]))
+           fun: 1.0
+       message: 'Optimization terminated successfully.'
+          nfev: 74
+           nit: 22
+        status: 0
+       success: True
+             x: array([20.06770833,  0.99053819,  0.10315104])
+```
+
+While, the optimization did find solution it is most certainly a local one, since the parameters don't match the expected parameter set. The simulation however ran a lot faster. This result confirms the initial hypothesis of the search space being very bumpy.

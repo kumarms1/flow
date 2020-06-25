@@ -11,7 +11,8 @@ from scipy.optimize import minimize
 import highway_free_flow as hff
 import numpy as np
 
-realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
+#realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
+realistic_params = [25, 1.6, 2] # a,b,v0,T,delta, s0
 #
 measured_counts = np.array(hff.HighwayFreeFlow(realistic_params).getCountsData())
 
@@ -25,17 +26,18 @@ def objective(params):
 #constraints?
 
 #bounds
-a_bounds = (0.5,2)
-b_bounds = (0.5,2)
+#a_bounds = (0.5,2)
+#b_bounds = (0.5,2)
 v0_bounds = (20,30)
 T_bounds = (1,3)
-delta_bounds = (1,5)
+#delta_bounds = (1,5)
 s0_bounds = (0.1,5)
-bnds = (a_bounds, b_bounds, v0_bounds, T_bounds, delta_bounds, s0_bounds)
+bnds = (v0_bounds, T_bounds, s0_bounds)
+#bnds = (a_bounds, b_bounds, v0_bounds, T_bounds, delta_bounds, s0_bounds)
 
 #initial guess
 #guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
-guess = [1,1.5,30,1,4,2]
+guess = [20,1,0.1]
 
 #optimize
 sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options={'disp':True})

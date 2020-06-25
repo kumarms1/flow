@@ -20,12 +20,15 @@ import Process_Flow_Outputs as PFO
 class HighwayFreeFlow:
 
     def __init__(self,params,fidelity=30):
-        self.a = params[0]
-        self.b = params[1]
-        self.v0 = params[2]
-        self.T = params[3]
-        self.delta =params[4]
-        self.s0 = params[5]
+      #  self.a = params[0]
+      #  self.b = params[1]
+        self.a = 0.73
+        self.b = 1.67
+        self.delta = 4 
+        self.v0 = params[0]
+        self.T = params[1]
+      #  self.delta =params[4]
+        self.s0 = params[2]
         self.noise = 0 #no noise
         self.fidelity = fidelity
         self.traffic_speed = 25.8

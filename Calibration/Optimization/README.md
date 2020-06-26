@@ -162,3 +162,20 @@ Optimization terminated successfully.
 ```
 The routine did not seem to be optimal at all with a poor performing local minima chosen as the solution. This further suggests the bumpy terrain of the search space.
 
+## Optimizing a,b and delta parameters using the "realistic parameter values"
+
+Used the lower bound values as initial guess.
+
+```bash
+Round 0, return: 99.57355889883515
+Average, std returns: 99.57355889883515, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 720.0, 0.0
+Total time: 4.865291118621826
+steps/second: 168.49533478553485
+Data successfully loaded.
+simmed params:  [0.47256944 0.50535301 1.09143519]
+error: 47
+```
+
+I had to terminate the program since it was seemingly stuck at the same error value. This was unsuccessful attempt was expected since we know from the sensitivity analysis that these three paramaters don't really have much effect on the counts data.

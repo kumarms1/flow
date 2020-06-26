@@ -1,3 +1,44 @@
+# Analytical Approach
+
+Using the flow density relationsip and the equation for spacing at equilibrium, one can write Q as a function of v and the IDM parameters - v0,T and s0.
+
+![eqn](figures/eqn.png)
+
+Taking the partial derivatives of Q wrt to the IDM parameters and playing around with "realistic bounds" mentioned in https://tigerprints.clemson.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=2936&context=all_theses, we get the following plots.
+
+## For fixed v0 (v0=30)
+
+<table>
+  <tr>
+    <td> Partial derivative of Q wrt to s0</td>
+    <td> Partial derivative of Q wrt to T</td>
+    <td> Partial derivative of Q wrt to v0</td>
+  </tr>
+  <tr>
+    <td><img src="figures/dqds0_fixed_s0.gif" width=400 height=320></td>
+    <td><img src="figures/dqdT_fixed_s0.gif" width=400 height=320></td>
+    <td><img src="figures/dqdv0_fixed_s0.gif" width=400 height=320></td>
+  </tr>
+</table>
+
+## For fixed s0 (s0=2)
+
+<table>
+  <tr>
+    <td> Partial derivative of Q wrt to s0</td>
+    <td> Partial derivative of Q wrt to T</td>
+    <td> Partial derivative of Q wrt to v0</td>
+  </tr>
+  <tr>
+    <td><img src="figures/dqds0_fixed_v0.gif" width=400 height=320></td>
+    <td><img src="figures/dqdT_fixed_v0.gif" width=400 height=320></td>
+    <td><img src="figures/dqdv0_fixed_v0.gif" width=400 height=320></td>
+  </tr>
+</table>
+
+## Insights
+
+
 # Optimization Routine
 
 ### High Level Algorithm

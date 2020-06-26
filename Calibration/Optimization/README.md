@@ -6,8 +6,7 @@ Using the flow density relationsip and the equation for spacing at equilibrium, 
 
 Taking the partial derivatives of Q wrt to the IDM parameters and playing around with "realistic bounds" mentioned in https://tigerprints.clemson.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=2936&context=all_theses, we get the following plots.
 
-## For fixed v0 (v0=30)
-
+## For fixed s0 (s0=2)
 <table>
   <tr>
     <td> Partial derivative of Q wrt to s0</td>
@@ -21,8 +20,7 @@ Taking the partial derivatives of Q wrt to the IDM parameters and playing around
   </tr>
 </table>
 
-## For fixed s0 (s0=2)
-
+## For fixed v0 (v0=30)
 <table>
   <tr>
     <td> Partial derivative of Q wrt to s0</td>

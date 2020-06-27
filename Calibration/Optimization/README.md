@@ -218,3 +218,72 @@ error: 47
 ```
 
 I had to terminate the program since it was seemingly stuck at the same error value. This was unsuccessful attempt was expected since we know from the sensitivity analysis that these three paramaters don't really have much effect on the counts data.
+
+
+## Optimizing congested regime (with waves) 
+
+Used the lower bound values as initial guess with v0 = 20.
+
+```bash
+Round 0, return: 15.62971697066833
+Average, std returns: 15.62971697066833, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 954.0, 0.0
+Total time: 8.653223991394043
+steps/second: 102.10807902943912
+Data successfully loaded.
+simmed params:  [ 0.54811385  0.60944355 23.45595448  0.31757321  1.09725927  0.10704798]
+error: 3
+```
+
+The initial error was around 184 and then started converging to lower errors but since Dr. Work asked me to stop the sim if it lasts longer than 45 mins, I force quit it.
+
+## Optimizing congested regime (with waves) using v0, T and s0 parameters 
+
+Used the lower bound values as initial guess with v0 = 20.
+
+```bash
+Optimization terminated successfully.
+         Current function value: 4.000000
+         Iterations: 37
+         Function evaluations: 108
+ final_simplex: (array([[25.81481481,  0.86111111,  0.08888889],
+       [25.81480957,  0.86111032,  0.08888882],
+       [25.81477566,  0.86111193,  0.08888898],
+       [25.81480279,  0.8611106 ,  0.08888882]]), array([4., 4., 4., 4.]))
+           fun: 4.0
+       message: 'Optimization terminated successfully.'
+          nfev: 108
+           nit: 37
+        status: 0
+       success: True
+             x: array([25.81481481,  0.86111111,  0.08888889])
+```
+
+Optimization terminated but reached a local minima instead of global minima.
+
+
+## Optimizing free flow regime using velocity data using v0, T and s0
+
+Used the lower bound values as initial guess with v0 = 20.
+
+```bash
+```
+
+
+## Optimizing free flow regime using both velocity and counts data using v0, T and s0
+
+Used the lower bound values as initial guess with v0 = 20.
+
+```bash
+
+```
+
+
+## Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data 
+
+Used the lower bound values as initial guess with v0 = 20.
+
+```bash
+
+```

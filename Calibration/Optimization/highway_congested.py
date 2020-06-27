@@ -1,40 +1,39 @@
 """
 @author: Sadman Ahmed Shanto
-Plan:
-    simulation should be a class with IDM paramaters as init values, data file name as a instance variable. Needs functions that processes macro data, needs function that deletes the resultant data file.
 """
-
-from flow.controllers import IDMController,OV_FTL_Controller,LinearOVM,BandoFTL_Controller
+from flow.controllers import IDMController,LinearOVM,BandoFTL_Controller
 from flow.core.params import SumoParams, EnvParams, NetParams, InitialConfig, SumoLaneChangeParams
 from flow.core.params import VehicleParams, InFlows
 from flow.envs.ring.lane_change_accel import ADDITIONAL_ENV_PARAMS
 from flow.networks.highway import HighwayNetwork, ADDITIONAL_NET_PARAMS
+from flow.networks.SpeedChange import HighwayNetwork_Modified, ADDITIONAL_NET_PARAMS
 from flow.envs import LaneChangeAccelEnv
 from flow.core.experiment import Experiment
 import numpy as np
 import pandas as pd
-import os, sys, csv
+import os, sys
 import Process_Flow_Outputs as PFO
-#import matplotlib.pyplot as pt
 
-class HighwayFreeFlow:
-
+class HighwayCongested:
+ 
     def __init__(self,params,fidelity=30):
-        self.a = 0.73
-        self.b = 1.67
+        self.a = 1.3
+        self.b = 2.0
         self.v0 = params[0]
         self.T = params[1]
         self.delta = 4
         self.s0 = params[2]
         self.noise = 0 #no noise
         self.fidelity = fidelity
-        self.traffic_speed = 25.8
-        self.traffic_flow = 2006
+        self.traffic_speed = 24.1
+        self.traffic_flow = 2215
         self.accel_data = (IDMController, {'a':self.a,'b':self.b,'noise':self.noise, 'v0':self.v0, 'T':self.T, 'delta':self.delta, 's0':self.s0})
         self.env_params = EnvParams(additional_params=ADDITIONAL_ENV_PARAMS)
         self.additional_net_params = ADDITIONAL_NET_PARAMS.copy()
         self.additional_net_params['lanes'] =1
         self.additional_net_params['length'] = 1600
+        self.additional_net_params['end_speed_limit'] = 10.0
+        self.additional_net_params['boundary_cell_length'] = 100
         self.csvFileName = ""
         self.runSim()
 
@@ -67,7 +66,7 @@ class HighwayFreeFlow:
             # name of the flow environment the experiment is running on
             env_name=LaneChangeAccelEnv,
             # name of the network class the experiment is running on
-            network=HighwayNetwork,
+            network=HighwayNetwork_Modified,
             # simulator that is used by the experiment
             simulator='traci',
             # sumo-related parameters (see flow.core.params.SumoParams)
@@ -77,6 +76,7 @@ class HighwayFreeFlow:
                 lateral_resolution=0.1,
                 emission_path='data/',
                 restart_instance=True,
+                use_ballistic=True
             ),
             # environment related parameters (see flow.core.params.EnvParams)
             env=EnvParams(
@@ -114,7 +114,7 @@ class HighwayFreeFlow:
     def getCountsData(self):
         countsData, speedData = self.processMacroData(self.csvFileName)
         print("The counts are: ", countsData)
-     #   self.deleteDataFile(self.csvFileName)
+        self.deleteDataFile(self.csvFileName)
         return countsData
 
     def getVelocityData(self):

@@ -106,6 +106,20 @@ def determineParams(i,params_file):
       params_list = list(reader)
     return params_list[i]
 
+
+def createSpaceTimeDiagram(csv_path,fname, params_file, index):
+    dataStored = PFO.SimulationData(csv_path = csv_path)
+    edge_list = ['edge_0','edge_1']
+    lane_list = [0] 
+    time_range = [0,300]
+    pos_range = [0,1600]
+    clim = [0,30]
+    fileName = "figs/space_time/" +fname+"_space_time.png"
+    marker_size = 1.0
+    coloring_Attribute = 'SPEED'
+    dataStored.plot_Time_Space(coloring_Attribute=coloring_Attribute,edge_list=edge_list,lane_list=lane_list,clim=clim,fileName=fileName,time_range=time_range,pos_range=pos_range,marker_size=marker_size)
+
+
 if __name__ == "__main__":
     files = glob.glob("data/"+sys.argv[1] + "/highway*.csv")
     files.sort(key=os.path.getmtime)
@@ -114,7 +128,8 @@ if __name__ == "__main__":
     #print(sys.argv[1])
     for i in files:
         fname = i.split("/")[2].split("-e")[0]
+        createSpaceTimeDiagram(i,fname,params_file,index)
      #   print("file name: ", fname)
-        getCounts(i,fname, params_file, index)
+     #   getCounts(i,fname, params_file, index)
         index += 1
 

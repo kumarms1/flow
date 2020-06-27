@@ -265,10 +265,23 @@ Optimization terminated but reached a local minima instead of global minima.
 
 ## Optimizing free flow regime using velocity data using v0, T and s0
 
-Used the lower bound values as initial guess with v0 = 20.
-
 ```bash
+Round 0, return: 36.628420625215995
+Average, std returns: 36.628420625215995, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 918.0, 0.0
+Total time: 5.834083080291748
+steps/second: 139.01714306954227
+Data successfully loaded.
+The counts are:  [0, 10, 12, 13, 13, 13, 9]
+Data successfully loaded.
+The speeds are:  [0, 22.533, 19.832, 18.505, 17.738, 17.278, 17.024]
+simmed params:  [25.17867481  1.7739121   0.04323899]
+count error: 2
+velocity error: 0.006313000000000275
 ```
+
+The expected parameters were [25,1.6,2] and the initial guess was guess = [20, 1, 0.1] like all the other 3 parameter optimization run. However, using velocity data rather than counts data we get a closer fit to the expected parameters for v0 and T (the ones that count). The routine might have led to the exact result as well but I had to cut it short due to the time constraint.  
 
 
 ## Optimizing free flow regime using both velocity and counts data using v0, T and s0
@@ -276,9 +289,24 @@ Used the lower bound values as initial guess with v0 = 20.
 Used the lower bound values as initial guess with v0 = 20.
 
 ```bash
-
+Optimization terminated successfully.
+         Current function value: 3.040539
+         Iterations: 96
+         Function evaluations: 198
+ final_simplex: (array([[2.52444497e+01, 1.81996804e+00, 2.22092398e-02],
+       [2.52444560e+01, 1.81996918e+00, 2.22094687e-02],
+       [2.52443577e+01, 1.81996108e+00, 2.22093069e-02],
+       [2.52444856e+01, 1.81997019e+00, 2.22094809e-02]]), array([3.040539, 3.040539, 3.040539, 3.040539]))
+           fun: 3.0405390000000003
+       message: 'Optimization terminated successfully.'
+          nfev: 198
+           nit: 96
+        status: 0
+       success: True
+             x: array([25.2444497, 1.81996804, 2.22092398e-02])
 ```
 
+The optimization routine led to a local minima with parameter values close to the expected values. The two data objective function seemed to be continually decreasing in errors as shown in the output logs. This seems to be promising.
 
 ## Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data 
 

@@ -13,7 +13,6 @@ realistic_params = [25, 1.6, 2] # a,b,delta
 real_sim = hff.HighwayFreeFlow(realistic_params)
 measured_counts = np.array(real_sim.getCountsData())
 measured_velocity = np.array(real_sim.getVelocityData())
-print("measured velocity: ", measured_velocity)
 
 #objective function
 def objective(params):
@@ -23,9 +22,10 @@ def objective(params):
     error_counts = ((simmed_counts - measured_counts)**2).sum()
     error_velocity = ((simmed_velocity - measured_velocity)**2).sum()
     print("simmed params: ", params)
-    print("count error: " + str(error_counts))
-    print("velocity error: " + str(error_velocity))
-    return error_velocity
+   # print("count error: " + str(error_counts))
+   # print("speed error: " + str(error_velocity))
+    print("error: ", str(error_counts + error_velocity)) 
+    return error_velocity + error_counts
 
 #constraints?
 

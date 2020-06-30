@@ -8,11 +8,11 @@ import seaborn as sns
 
 #bounds for s0,v0,T
 s0_bounds = np.linspace(0,5,20)
-v0_bounds = np.linspace(0,30,20)
+v0_bounds = np.linspace(0.1,30,20)
 T_bounds = np.linspace(1,3,20)
 
 #values of v_array
-v = np.linspace(0,30,20)
+v = np.linspace(0.1,30,20)
 #constants
 L = 5
 
@@ -232,13 +232,49 @@ def plotTderivative_varied_v0_T():
     animation.save('dqdT_fixed_s0.gif', writer = 'imagemagick')
 
 
+def plotQV_v0(s0=0.5,v0=30,T=1.67,v_array=v):
+    for t in v0:
+        q = Q(s0,t,T,v_array)
+        sns.set_palette(sns.color_palette("hls", 20))
+        plt.plot(v_array, q, label="v0 = "+str(round(t,3)))
+        plt.legend()
+        plt.title("Different v0 parameters")
+        plt.xlabel("Veloctiy (m/s)")
+        plt.ylabel("Q")
+    plt.show()
+
+def plotQV_s0(s0=0.5,v0=30,T=1.67,v_array=v):
+    for t in s0:
+        q = Q(t,v0,T,v_array)
+        sns.set_palette(sns.color_palette("hls", 20))
+        plt.plot(v_array, q, label="s0 = "+str(round(t,3)))
+        plt.legend()
+        plt.title("Different s0 parameters")
+        plt.xlabel("Veloctiy (m/s)")
+        plt.ylabel("Q")
+    plt.show()
+
+def plotQV_T(s0=0.5,v0=30,T=1.67,v_array=v):
+    for t in T:
+        q = Q(s0,v0,t,v_array)
+        sns.set_palette(sns.color_palette("hls", 20))
+        plt.plot(v_array, q, label="T = "+str(round(t,3)))
+        plt.legend()
+        plt.title("Different T parameters")
+        plt.xlabel("Veloctiy (m/s)")
+        plt.ylabel("Q")
+    plt.show()
+
+
 if __name__ == "__main__":
 #   plotV0derivative()
-   plotS0derivative_varied_v0_T()
-   plotV0derivative_varied_v0_T()
-   plotTderivative_varied_v0_T()
+ #  plotS0derivative_varied_v0_T()
+ #  plotV0derivative_varied_v0_T()
+#   plotTderivative_varied_v0_T()
  #  plotTderivative()
-   sns.set_palette(sns.color_palette("hls", 20))
+   plotQV_v0(v0=v0_bounds)
+   plotQV_s0(s0=s0_bounds)
+   plotQV_T(T=T_bounds)
   # plot_T_derivative_v0(3,v0_bounds,2,v)
 
 #find how min and max of each derivative looks like and whether the param vector set at these values are sensible or not

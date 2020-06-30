@@ -34,8 +34,20 @@ Taking the partial derivatives of Q wrt to the IDM parameters and playing around
   </tr>
 </table>
 
-## Insights
 
+## Q V Graphs
+<table>
+  <tr>
+    <td> Q vs V plot for fixed v0 and T</td>
+    <td> Q vs V plot for fixed s0 and T</td>
+    <td> Q vs V plot for fixed v0 and s0</td>
+  </tr>
+  <tr>
+    <td><img src="figures/s0_qv.png" width=400 height=320></td>
+    <td><img src="figures/v0_qv.png" width=400 height=320></td>
+    <td><img src="figures/T_qv.png" width=400 height=320></td>
+  </tr>
+</table>
 
 # Optimization Routine
 

@@ -23,18 +23,23 @@ from flow.envs import TestEnv
 
 WANT_GHOST_CELL = True
 WANT_DOWNSTREAM_BOUNDARY = True
-ON_RAMP = True
+ON_RAMP = False
 
-horizon = 1000 #number of simulation steps
+horizon = 1500 #number of simulation steps
 sim_step = .5 #Simulation step size
 
 inflow_rate = 2050 #Per lane flow rate in veh/hr
-inflow_speed = 25.5
+inflow_speed = 25.5 #Speed corresponding to this inflow rate
 
 
-# accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3,'fail_safe': ['obey_speed_limit', 'safe_velocity', 'feasible_accel', 'instantaneous']})
+downstream_speed = 3.5 #What the downstream congestion speed should be
 
-accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3})
+on_ramp_inflow = 100 #on ramp inflow rate
+
+
+accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3,'fail_safe': ['obey_speed_limit', 'safe_velocity', 'feasible_accel', 'instantaneous']})
+
+#accel_data = (IDMController,{'a':1.3,'b':2.0,'noise':0.3})
 
 highway_start_edge = ''
 
@@ -62,6 +67,7 @@ if ON_RAMP:
             lane_change_mode="strategic",
         ),
         acceleration_controller=accel_data,
+        car_following_params=SumoCarFollowingParams(speed_mode = 'aggressive'),
         routing_controller=(I210Router, {})
     )
 
@@ -78,13 +84,13 @@ if ON_RAMP:
     inflow.add(
         veh_type="human",
         edge="27414345",
-        vehs_per_hour=500,
+        vehs_per_hour=on_ramp_inflow,
         departLane="random",
         departSpeed=10)
     inflow.add(
         veh_type="human",
         edge="27414342#0",
-        vehs_per_hour=500,
+        vehs_per_hour=on_ramp_inflow,
         departLane="random",
         departSpeed=10)
 
@@ -110,9 +116,46 @@ else:
             departSpeed=inflow_speed)
 
 
-network_xml_file = "examples/exp_configs/templates/sumo/i210_with_ghost_cell_with_downstream.xml"
+#This is the default file used:
+sumo_templates_path = "examples/exp_configs/templates/sumo/"
 
-NET_TEMPLATE = os.path.join(config.PROJECT_PATH,network_xml_file)
+sumo_templates_path = os.path.join(config.PROJECT_PATH,sumo_templates_path)
+
+
+def Set_i210_congestion(sumo_templates_path=None,speed=5.0):
+    '''
+    This function creates a new xml file that has the new specificed downstream speed.
+    It creates a new xml file called i210_downstream_set.xml each time from the original
+    that is then used as the net file.
+
+    '''
+    speed = str(speed)
+
+    #Original xml file:
+    fileName = 'i210_with_ghost_cell_with_downstream_test_2.net.xml'
+    fileName = os.path.join(sumo_templates_path,fileName)
+
+    file_lines = []
+    lines_to_change = [2415,2418,2421,2424,2427,2430]
+
+    with open(fileName) as f:
+        file_lines = f.readlines()
+
+
+    for line_num in lines_to_change:
+        new_line = file_lines[line_num][:183]+speed+file_lines[line_num][186:]
+        file_lines[line_num] = new_line
+
+    #New xml file that will be used in the sim:
+    new_fileName = os.path.join(sumo_templates_path,'i210_downstream_set.xml')
+
+    with open(new_fileName, 'w') as filehandle:
+        filehandle.writelines(file_lines)
+
+
+    return new_fileName
+
+NET_TEMPLATE = Set_i210_congestion(sumo_templates_path=sumo_templates_path,speed=downstream_speed)
 
 
 flow_params = dict(

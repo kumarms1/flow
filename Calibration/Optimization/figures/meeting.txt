@@ -1,0 +1,6 @@
+Optimization results:
+Partials:
+QV graphs:
+Study:
+Research Question/Direction:
+Next?

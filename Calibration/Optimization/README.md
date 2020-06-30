@@ -320,6 +320,32 @@ Optimization terminated successfully.
 
 The optimization routine led to a local minima with parameter values close to the expected values. The two data objective function seemed to be continually decreasing in errors as shown in the output logs. This seems to be promising.
 
+## Optimizing free flow regime using both velocity and counts data using v0, T and s0 (2)
+
+Used close to real parameter values as initial guess = [24, 1.5, 1.7]
+
+```bash
+simmed params:  [25.01648218  1.61337768  1.65495478]
+error:  0.004941999999999865
+Optimization terminated successfully.
+         Current function value: 0.004942
+         Iterations: 64
+         Function evaluations: 146
+```
+Very close to real values for v0 and T but not so for s0. The following plots show the fit:
+
+<table>
+  <tr>
+    <td> Counts Data</td>
+    <td> Speed Data</td>
+  </tr>
+  <tr>
+    <td><img src="figures/counts_20200630_120117.png" width=600 height=480></td>
+    <td><img src="figures/velocity_20200630_120117.png" width=600 height=480></td>
+  </tr>
+</table>
+
+
 ## Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data 
 
 Used the lower bound values as initial guess with v0 = 20.

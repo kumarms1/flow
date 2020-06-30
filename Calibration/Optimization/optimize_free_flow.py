@@ -7,6 +7,8 @@ references for realistic params and bounds:
 from scipy.optimize import minimize
 import highway_free_flow as hff
 import numpy as np
+import time
+import matplotlib.pyplot as plt
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
 realistic_params = [25, 1.6, 2] # a,b,delta
@@ -41,9 +43,38 @@ bnds = (v0_bounds, T_bounds, s0_bounds)
 
 #initial guess
 #guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
-guess = [20, 1, 0.1]
+guess = [24, 1.5, 1.7]
 
 #optimize
 sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options={'disp':True})
 
-print(sol)
+#store the optimized params,counts and speeds
+opt_params = sol.x
+opt_sim = hff.HighwayFreeFlow(opt_params)
+opt_counts = np.array(opt_sim.getCountsData())
+opt_velocity = np.array(opt_sim.getVelocityData())
+
+#time
+timestr = time.strftime("%Y%m%d_%H%M%S")
+
+#plot counts data 
+plt.plot([30*i for i in range(len(opt_counts))], opt_counts,"r-" ,label="fit")
+plt.plot([30*i for i in range(len(measured_counts))], measured_counts, label="real")
+plt.legend()
+plt.xlabel("Data Taking Period")
+plt.ylabel("Counts Data")
+plt.title("Calibrating Counts Data")
+plt.show()
+plt.savefig("figures/counts_"+timestr+".png")
+
+
+#plot average speed data
+plt.plot([30*i for i in range(len(opt_velocity))], opt_velocity,"r-" ,label="fit")
+plt.plot([30*i for i in range(len(measured_velocity))], measured_velocity, label="real")
+plt.legend()
+plt.xlabel("Data Taking Period")
+plt.ylabel("Speed Data")
+plt.title("Calibrating Speed Data")
+plt.show()
+plt.savefig("figures/velocity_"+timestr+".png")
+

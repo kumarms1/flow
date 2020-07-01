@@ -7,7 +7,7 @@ references for realistic params and bounds:
 from scipy.optimize import minimize
 import highway_free_flow as hff
 import numpy as np
-import time
+import time, csv
 import matplotlib.pyplot as plt
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
@@ -15,6 +15,11 @@ realistic_params = [25, 1.6, 2] # a,b,delta
 real_sim = hff.HighwayFreeFlow(realistic_params)
 measured_counts = np.array(real_sim.getCountsData())
 measured_velocity = np.array(real_sim.getVelocityData())
+
+def readData(file):
+    pass
+
+
 
 #objective function
 def objective(params):

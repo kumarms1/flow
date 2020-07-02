@@ -116,11 +116,11 @@ While, the optimization did find solution it is most certainly a local one, sinc
 
 This suggests that the search space is bumpy with multiple minimas.
 
-## For initial guess of [ 1,1.5,30,1,4,2] (i.e. the default Flow IDM parameters) <a name="2" />
+## For initial guess of [ 1,1.5,30,1,4,2] (i.e. the default Flow IDM parameters)
 
 The optimization routine went on for 2 hours before I force quit it, the log output showed that it was stuck at the same set of values for a long period of time.
 
-## Optimizing only T, v0 and s0 parameters <a name="3" />
+## Optimizing only T, v0 and s0 parameters 
 
 The optimization terminated successfully with the following output:
 
@@ -338,44 +338,149 @@ Optimization terminated successfully.
          Iterations: 64
          Function evaluations: 146
 ```
+
+# Longer Simulation Time Calibrations <a name="4" /> #
+
+All simulations now are running for 10 minutes (previously 5 minutes)
+
+## all parameters (counts)
+
+Reached a local minima -> the parameters were not as we expected. Faster optimization time and lower errros as compared to two params calibration including both speeds and counts.
+
+```bash
+Round 0, return: 237.02169735213323
+Average, std returns: 237.02169735213323, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1260.0, 0.0
+Total time: 12.975030899047852
+steps/second: 102.54730715007393
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [ 0.50050131  0.52035134 20.81608037  0.96899361  1.03385769  0.09870236]
+count error: 1
+```
+
+## v0 and T parameters (counts) 
+
+Took around 30 minutes, reached a local minima.
+
+```bash
+Round 0, return: 88.78258841095229
+Average, std returns: 88.78258841095229, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1260.0, 0.0
+Total time: 10.75816798210144
+steps/second: 125.9943889198125
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [20.49992371  1.03750725]
+count error: 5
+Optimization terminated successfully.
+         Current function value: 5.000000
+         Iterations: 16
+         Function evaluations: 55
+```
+
 <table>
   <tr>
     <td> Counts Data</td>
     <td> Speed Data</td>
   </tr>
   <tr>
-    <td><img src="figures/counts_20200630_120117.png" width=600 height=480></td>
-    <td><img src="figures/velocity_20200630_120117.png" width=600 height=480></td>
+    <td><img src="figures/counts_fit.png" width=600 height=480></td>
+    <td><img src="figures/velocity_counts-fit.png" width=600 height=480></td>
   </tr>
 </table>
 
-# Longer Simulation Time Calibrations <a name="4" /> #
-
-## all parameters (counts)
-
-## v0 and T0 parameters (counts) 
 
 ## all parameters (speed)
 
-## v0 and T0 parameters (speed) 
+The output log shows that the error decrease started off well and then stagnated. The optimization routine took longer than the counts data and had a higher error value, I had to terminate the sim.
+
+```bash
+Round 0, return: 165.72713363564804
+Average, std returns: 165.72713363564804, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1395.0, 0.0
+Total time: 12.53541612625122
+steps/second: 106.82887180548963
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [ 0.4986763   0.52264328 21.98866884  0.88510069  1.05883732  0.10138411]
+speed error: 3.8678879999999993
+```
+
+## v0 and T parameters (speed) 
+
+```bash
+Round 0, return: 171.46655859425698
+Average, std returns: 171.46655859425698, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1161.0, 0.0
+Total time: 10.776818990707397
+steps/second: 126.87927812669804
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [24.81807881  1.77386694]
+speed error: 0.5045680000000021
+Optimization terminated successfully.
+         Current function value: 0.504568
+         Iterations: 60
+         Function evaluations: 129
+```
+
+Took around 50 minutes but had the lowest error values, and the best simmed parameters.
+
+<table>
+  <tr>
+    <td> Counts Data</td>
+    <td> Speed Data</td>
+  </tr>
+  <tr>
+    <td><img src="figures/counts_speed-fit.png" width=600 height=480></td>
+    <td><img src="figures/velocity_fit.png" width=600 height=480></td>
+  </tr>
+</table>
+
 
 ## all parameters (speed+counts)
 
-## v0 and T0 parameters (speed+counts) 
+The output log shows errors decreasing much more quickly and prominently. the optimization routine ran faster comparatively, however, it didn't terminate on its own and I had to force quit it.
+
+```bash
+Round 0, return: 180.29050232201
+Average, std returns: 180.29050232201, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1305.0, 0.0
+Total time: 11.832932710647583
+steps/second: 114.0289048718916
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [ 0.50107964  0.48399337 21.96866985  0.95544449  1.0381536   0.10230267]
+error:  14.044269000000007
+```
+
+## v0 and T parameters (speed+counts) 
+
+Using v0 = 20 and T = 1 as initial guess parameters.
+
+From the output logs it seems like that the routine is converging onto certain param values that are not really minimizing the errors very much. The optimization was not doing so well even after 40 mins (error = 56.1466) so I forced quit it. 
+
+The simmed params were as follows when I quit: [19.25907, 1.21013]
 
 # Noise Calibrations <a name="5" /> #
 
 ## all parameters (counts)
 
-## v0 and T0 parameters (counts) 
+## v0 and T parameters (counts) 
 
 ## all parameters (speed)
 
-## v0 and T0 parameters (speed) 
+## v0 and T parameters (speed) 
 
 ## all parameters (speed+counts)
 
-## v0 and T0 parameters (speed+counts) 
+## v0 and T parameters (speed+counts) 
 
 # Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data <a name="6" /> ## 
 
@@ -384,3 +489,12 @@ Used the lower bound values as initial guess with v0 = 20.
 ```bash
 
 ```
+
+# Obeservations/Need to look at:
+- [ ] for longer sim, having v0 and T as only params for both counts and speed data was not doing so well. try same experiment for the shorter sim to see whether s0 has a crucial role in calibration.
+- [x] using SLSQP for longer sims. Verified that for shorter ones, it is faster but higher error than Nelder-Mead. Same result for longer sims as well.
+- [ ] - [ ] idea: for Nelder-Mead -> create a threshold and stop sim when threshold is reached.
+- [ ] idea: need to incorporate physical constraints to IDM params
+- [ ] lamda analysis needed
+- [ ] calibration of inflows needed 
+

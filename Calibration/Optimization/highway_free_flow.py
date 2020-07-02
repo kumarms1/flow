@@ -22,10 +22,10 @@ class HighwayFreeFlow:
     def __init__(self,params,fidelity=30):
         self.a = 0.73
         self.b = 1.67
-        self.v0 = params[0]
+        self.v0 = params[0] 
         self.T = params[1]
         self.delta = 4
-        self.s0 = params[2]
+        self.s0 = 2
         self.noise = 0 #no noise
         self.fidelity = fidelity
         self.traffic_speed = 25.8
@@ -80,7 +80,7 @@ class HighwayFreeFlow:
             ),
             # environment related parameters (see flow.core.params.EnvParams)
             env=EnvParams(
-                horizon=500,
+                horizon=1000,
                 additional_params=ADDITIONAL_ENV_PARAMS.copy(),
             ),
             # network-related parameters (see flow.core.params.NetParams and the
@@ -113,13 +113,13 @@ class HighwayFreeFlow:
 
     def getCountsData(self):
         countsData, speedData = self.processMacroData(self.csvFileName)
-        print("The counts are: ", countsData)
+      #  print("The counts are: ", countsData)
      #   self.deleteDataFile(self.csvFileName)
         return countsData
 
     def getVelocityData(self):
         countsData, speedData = self.processMacroData(self.csvFileName)
-        print("The speeds are: ", speedData)
+      #  print("The speeds are: ", speedData)
         self.deleteDataFile(self.csvFileName)
         return speedData
 

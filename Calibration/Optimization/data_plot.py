@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
-RDS_path = 'data/radar_3.csv'
+RDS_path = 'data/' + sys.argv[1]
+num = sys.argv[1].split(".csv")[0]
 RDS_DataTrack = pd.read_csv(RDS_path,delimiter=',')
 
 def tidyData(RDS_DataTrack):
@@ -42,13 +44,17 @@ def getDensity(RDS_DataTrack):
         density.append(  ( 12.0*float(RDS_DataTrack['volume'][i]) ) / float( RDS_DataTrack['speed'][i] ))
     return density
 
-RDS_DataTrack = tidyData(RDS_DataTrack)
 
+def fixDataFidelity(RDS_DataTrack,fidelity):
+    pass
+
+
+RDS_DataTrack = tidyData(RDS_DataTrack)
 convertTimeStampts(RDS_DataTrack)
 density = getDensity(RDS_DataTrack)
-createPlot(RDS_DataTrack['timestamp'], RDS_DataTrack['volume']*12, RDS_DataTrack['speed'] ,"time series (s)", "Flow (vehicle/hour)", "Flow against Time", "flow_time_3.png")
-createPlot(RDS_DataTrack['timestamp'], RDS_DataTrack['speed'], RDS_DataTrack['speed'],"time series (s)", "Average Speed (miles/hour)", "Speed against Time", "speed_time_3.png", False)
-createPlot(RDS_DataTrack['speed'], RDS_DataTrack['volume']*12, RDS_DataTrack['speed'], "Average Speed (miles/hour)", "Flow (vehicle/hour)","Flow against Speed", "flow_speed_3.png", False)
-createPlot(RDS_DataTrack['timestamp'], density, RDS_DataTrack['speed'] ,"time series (s)", "Density (vehicle/mile)", "Density against Time", "density_time_3.png")
-createPlot(density, 12*RDS_DataTrack['volume'] ,RDS_DataTrack['speed'] , "Density (vehicle/mile)", "Flow (vehicle/hour)", "Fundamental Diagram", "fundamental_diagram_3.png")
-createPlot(density, RDS_DataTrack['speed'] ,RDS_DataTrack['speed'] , "Density (vehicle/mile)", "Speed (miles/hour)", "Speed against Density", "speed_density_3.png",False)
+createPlot(RDS_DataTrack['timestamp'], RDS_DataTrack['volume']*12, RDS_DataTrack['speed'] ,"time series (s)", "Flow (vehicle/hour)", "Flow against Time", "flow_time_"+num+".png")
+createPlot(RDS_DataTrack['timestamp'], RDS_DataTrack['speed'], RDS_DataTrack['speed'],"time series (s)", "Average Speed (miles/hour)", "Speed against Time", "speed_time_"+num+".png", False)
+createPlot(RDS_DataTrack['speed'], RDS_DataTrack['volume']*12, RDS_DataTrack['speed'], "Average Speed (miles/hour)", "Flow (vehicle/hour)","Flow against Speed", "flow_speed_"+num+".png", False)
+createPlot(RDS_DataTrack['timestamp'], density, RDS_DataTrack['speed'] ,"time series (s)", "Density (vehicle/mile)", "Density against Time", "density_time_"+num+".png")
+createPlot(density, 12*RDS_DataTrack['volume'] ,RDS_DataTrack['speed'] , "Density (vehicle/mile)", "Flow (vehicle/hour)", "Fundamental Diagram", "fundamental_diagram_"+num+".png")
+createPlot(density, RDS_DataTrack['speed'] ,RDS_DataTrack['speed'] , "Density (vehicle/mile)", "Speed (miles/hour)", "Speed against Density", "speed_density_"+num+".png",False)

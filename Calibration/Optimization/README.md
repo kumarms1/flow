@@ -68,9 +68,15 @@ start the optimization routine using the Nelder-Mead solver to minimize the obje
 I ran a toy simulation to test out which solver was the most efficient and accurate solver out of all the solvers that don't require a Jacobian.
 
 
-# Results and Interpretation:
+# Table of contents:
+* [counts calibrations](#1)
+* [speed calibrations](#2)
+* [speed and counts calibrations](#3)
+* [longer sim time calibrations](#4)
+* [artificial noise added calibrations](#5)
+* [non constant inflow rate calibrations](#6)
 
-## For initial guess of [ 0.5, 0.5, 20, 1, 1, 0.1] % a,b,v0,T,delta, s0
+## For initial guess of [ 0.5, 0.5, 20, 1, 1, 0.1] % a,b,v0,T,delta, s0 <a name="1" /> ## 
 
 The optimization terminated successfully with the following output:
 
@@ -110,11 +116,11 @@ While, the optimization did find solution it is most certainly a local one, sinc
 
 This suggests that the search space is bumpy with multiple minimas.
 
-## For initial guess of [ 1,1.5,30,1,4,2] (i.e. the default Flow IDM parameters)
+## For initial guess of [ 1,1.5,30,1,4,2] (i.e. the default Flow IDM parameters) <a name="2" />
 
 The optimization routine went on for 2 hours before I force quit it, the log output showed that it was stuck at the same set of values for a long period of time.
 
-## Optimizing only T, v0 and s0 parameters
+## Optimizing only T, v0 and s0 parameters <a name="3" />
 
 The optimization terminated successfully with the following output:
 
@@ -275,7 +281,7 @@ Optimization terminated successfully.
 Optimization terminated but reached a local minima instead of global minima.
 
 
-## Optimizing free flow regime using velocity data using v0, T and s0
+## Optimizing free flow regime using speed data using v0, T and s0 <a name="2" /> ##
 
 ```bash
 Round 0, return: 36.628420625215995
@@ -296,7 +302,7 @@ velocity error: 0.006313000000000275
 The expected parameters were [25,1.6,2] and the initial guess was guess = [20, 1, 0.1] like all the other 3 parameter optimization run. However, using velocity data rather than counts data we get a closer fit to the expected parameters for v0 and T (the ones that count). The routine might have led to the exact result as well but I had to cut it short due to the time constraint.  
 
 
-## Optimizing free flow regime using both velocity and counts data using v0, T and s0
+## Optimizing free flow regime using both velocity and counts data using v0, T and s0 <a name="3" /> ##
 
 Used the lower bound values as initial guess with v0 = 20.
 
@@ -332,8 +338,6 @@ Optimization terminated successfully.
          Iterations: 64
          Function evaluations: 146
 ```
-Very close to real values for v0 and T but not so for s0. The following plots show the fit:
-
 <table>
   <tr>
     <td> Counts Data</td>
@@ -345,8 +349,35 @@ Very close to real values for v0 and T but not so for s0. The following plots sh
   </tr>
 </table>
 
+# Longer Simulation Time Calibrations <a name="4" /> #
 
-## Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data 
+## all parameters (counts)
+
+## v0 and T0 parameters (counts) 
+
+## all parameters (speed)
+
+## v0 and T0 parameters (speed) 
+
+## all parameters (speed+counts)
+
+## v0 and T0 parameters (speed+counts) 
+
+# Noise Calibrations <a name="5" /> #
+
+## all parameters (counts)
+
+## v0 and T0 parameters (counts) 
+
+## all parameters (speed)
+
+## v0 and T0 parameters (speed) 
+
+## all parameters (speed+counts)
+
+## v0 and T0 parameters (speed+counts) 
+
+# Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data <a name="6" /> ## 
 
 Used the lower bound values as initial guess with v0 = 20.
 

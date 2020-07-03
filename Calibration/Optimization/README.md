@@ -491,10 +491,14 @@ Used the lower bound values as initial guess with v0 = 20.
 ```
 
 # Obeservations/Need to look at:
-- [ ] for longer sim, having v0 and T as only params for both counts and speed data was not doing so well. try same experiment for the shorter sim to see whether s0 has a crucial role in calibration.
 - [x] using SLSQP for longer sims. Verified that for shorter ones, it is faster but higher error than Nelder-Mead. Same result for longer sims as well.
-- [ ] - [ ] idea: for Nelder-Mead -> create a threshold and stop sim when threshold is reached.
+- [ ] idea: for Nelder-Mead -> create a threshold and stop sim when threshold is reached.
 - [ ] idea: need to incorporate physical constraints to IDM params
 - [ ] lamda analysis needed
 - [ ] calibration of inflows needed 
+
+# To Do:
+- [ ] noise calibration
+- [ ] sensitivity analysis of longer sims
+- [ ] sensitivity analysis of noisy sims
 

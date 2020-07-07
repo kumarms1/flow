@@ -992,6 +992,8 @@ Doubled the time of simulation in free flow regime.
 - [x] organize all results on GitHub
 - [x] psueduo code of current calibration routine
 - [x] read George and take notes of thought
+- [ ] calib on different various initial guess sets
+- [ ] penalty method max a for given tolerance of error 
 - [ ] analysis of results
 - [ ] takeaway from results
 - [ ] idea of EM traffic flow, idea of macro traffic pattern data, study and thinking about different optimization techniques

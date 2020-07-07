@@ -65,6 +65,12 @@ bnds = (v0_bounds, T_bounds)
 #guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
 guess = [20, 1]
 
+"""
+compare 5 different initial guesses:
+    store opt_params
+    compare error function of 5
+"""
+
 #optimize
 sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options={'disp':True})
 

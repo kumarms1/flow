@@ -11,8 +11,9 @@ import csv
 import os
 import glob
 import sys
+import random
 
-def getCounts(csv_path,fname, params_file, index):
+def getCounts(csv_path,fname, params_file, index, noError=True):
     #read data into a var
     highway_data = PFO.SimulationData(csv_path = csv_path)
     #highway_data.veh_ids
@@ -50,16 +51,29 @@ def getCounts(csv_path,fname, params_file, index):
     #pt.plot(sorted_count_times,counts)
     #pt.show()
     count_num, average_speed = countsEveryXSeconds(int(sys.argv[3]), vTime_array)
-    print("The counts are: ", count_num)
-    print("The speeds are: ", average_speed)
-    print("The IDM parameters are: ", determineParams(index, params_file))
-    print("")
-    writeToFile(sys.argv[2], count_num, average_speed, determineParams(index, params_file) )
-    #print("Writing the counts data from " + fname + ".csv file")
-    #with open("data/"+sys.argv[2]+"/"+fname+"_counts.csv", 'a', newline='') as file:
-    #    writer = csv.writer(file)
-    #    writer.writerows([count_num])
-    #print("File Written\n") 
+    if noError:
+        print("The counts are: ", count_num)
+        print("The speeds are: ", average_speed)
+        print("The IDM parameters are: ", determineParams(index, params_file))
+        print("")
+        writeToFile(sys.argv[2], count_num, average_speed, determineParams(index, params_file) )
+    else:
+        count_num = addError(count_num, True, 3)
+        average_speed = addError(average_speed, False, 3)
+        print("The error counts are: ", count_num)
+        print("The error speeds are: ", average_speed)
+        print("The IDM parameters are: ", determineParams(index, params_file))
+        print("")
+        writeToFile(sys.argv[2], count_num, average_speed, determineParams(index, params_file) )
+
+
+def addError(vals, isCounts, stdv):
+    if isCounts:
+        y = np.round(np.random.normal(vals,stdv))
+        return np.where(y<0, 0, y)
+    else:
+        y = np.random.normal(vals,stdv)
+        return np.where(y<0, 0, y)
 
 def writeToFile(fileName,c,a,p):
     csvName = "info/" + fileName + ".csv"
@@ -132,6 +146,7 @@ if __name__ == "__main__":
      #   print("file name: ", fname)
      #   print("params_file ", params_file)
      #   print("index ", index)
-        getCounts(i,fname, params_file, index)
+        getCounts(i,fname, params_file, index, noError=False) #error in data
+        #getCounts(i,fname, params_file, index, noError=True) #no error in data
         index += 1
 

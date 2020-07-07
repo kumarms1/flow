@@ -666,9 +666,329 @@ min of T for velocity is good for identifying params at low fidelity
 at fidelity_60 average T function differentiates between free flow and congestion
 delta helps identify param set values (discontinuous at fidelity_60)
 
+# Longer Sim Sensitivity Analysis
+
+Doubled the time of simulation in free flow regime.
+## No Noise 
+### Speed Data
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/a_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/a_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/a_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/b_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/b_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/b_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/v0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/v0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/v0_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/T_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/T_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/T_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/delta_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/delta_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/delta_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/s0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/s0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/s0_params_velocity.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+### Counts Data
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/a_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/a_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/a_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/b_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/b_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/b_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/v0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/v0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/v0_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/T_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/T_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/T_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/delta_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/delta_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/delta_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/s0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/s0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/s0_params_counts.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+### Statistical
+#### Counts
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/a_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/b_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/v0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/T_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/delta_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/s0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+ 
+#### Speed
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/a_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/a_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/a_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/b_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/b_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/b_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/v0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/v0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/v0_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/T_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/T_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/T_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/delta_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/delta_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/delta_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp10freeFlow/fidelity_15/s0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_30/s0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp10freeFlow/fidelity_60/s0_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+ 
+## Gaussian Noise (stdv = 3)
+
+### Speed Data
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/a_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/a_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/a_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/b_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/b_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/b_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/v0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/v0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/v0_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/T_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/T_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/T_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/delta_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/delta_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/delta_params_velocity.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/s0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/s0_params_velocity.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/s0_params_velocity.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+### Counts Data
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/a_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/a_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/a_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/b_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/b_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/b_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/v0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/v0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/v0_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/T_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/T_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/T_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/delta_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/delta_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/delta_params_counts.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/s0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/s0_params_counts.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/s0_params_counts.png" width=400 height=320></td>
+  </tr>
+ </table>
+
+### Statistical
+#### Counts
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/a_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/a_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/b_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/b_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/v0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/v0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/T_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/T_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/delta_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/delta_Counts_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/s0_Counts_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/s0_Counts_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+ 
+#### Speed
+<table>
+  <tr>
+    <td>fidelity = 15</td>
+    <td>fidelity = 30</td>
+    <td>fidelity = 60</td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/a_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/a_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/a_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/b_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/b_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/b_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/v0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/v0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/v0_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/T_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/T_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/T_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/delta_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/delta_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/delta_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+  <tr>
+    <td><img src="figs/exp11freeFlow/fidelity_15/s0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_30/s0_Velocity_stats.png" width=400 height=320></td>
+    <td><img src="figs/exp11freeFlow/fidelity_60/s0_Velocity_stats.png" width=400 height=320></td>
+  </tr>
+ </table>
+
 ## TO DO (July 6)
 - [x] sensentivity analysis of noise added sims
-- [ ] calibration of noise added sims
+- [x] calibration of noise added sims
 - [ ] organize all results on GitHub
 - [ ] psueduo code of current calibration routine
 - [ ] analysis of results

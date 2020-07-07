@@ -666,6 +666,15 @@ min of T for velocity is good for identifying params at low fidelity
 at fidelity_60 average T function differentiates between free flow and congestion
 delta helps identify param set values (discontinuous at fidelity_60)
 
+## TO DO (July 6)
+- [ ] sensentivity analysis of noise added sims
+- [ ] calibration of noise added sims
+- [ ] psueduo code of current calibration routine
+- [ ] organize all results on GitHub
+- [ ] analysis of results
+- [ ] takeaway from results
+- [ ] read George and take notes of thought
+- [ ] idea of EM traffic flow, idea of macro traffic pattern data, study and thinking about different optimization techniques
 
 ## TO DO
 - [x] create reference data file from default paramter set

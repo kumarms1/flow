@@ -8,7 +8,7 @@ from scipy.optimize import minimize
 from scipy.optimize import minimize_scalar
 import highway_free_flow as hff
 import numpy as np
-import time
+import time, random
 import matplotlib.pyplot as plt
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
@@ -30,6 +30,14 @@ def objective(params):
  #   print("error: ", str(error_counts + error_velocity)) 
     return error_counts
 #constraints?
+
+def addError(vals, isCounts, stdv):
+    if isCounts:
+        y = np.round(np.random.normal(vals,stdv))
+        return np.where(y<0, 0, y)
+    else:
+        y = np.random.normal(vals,stdv)
+        return np.where(y<0, 0, y)
 
 #bounds
 a_bounds = (0.5,2)

@@ -5,4 +5,4 @@
 python3 generate_data.py $1 $2 $4
 
 #run the simulations
-. exec_sim_free.sh $2 $3 $1
+bash exec_sim_free.sh $2 $3 $1

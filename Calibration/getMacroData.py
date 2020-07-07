@@ -128,8 +128,10 @@ if __name__ == "__main__":
     #print(sys.argv[1])
     for i in files:
         fname = i.split("/")[2].split("-e")[0]
-        createSpaceTimeDiagram(i,fname,params_file,index)
+     #   createSpaceTimeDiagram(i,fname,params_file,index)
      #   print("file name: ", fname)
-     #   getCounts(i,fname, params_file, index)
+     #   print("params_file ", params_file)
+     #   print("index ", index)
+        getCounts(i,fname, params_file, index)
         index += 1
 

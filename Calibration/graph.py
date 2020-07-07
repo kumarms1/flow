@@ -210,7 +210,6 @@ s0_velocity = [velocity[i] for i in range(len(velocity)) if (  (i==0) or  ( (6*n
 
 #all_velocity_data = [a_velocity,b_velocity,v0_velocity,T_velocity,delta_velocity,s0_velocity]
 
-"""
 getRelationships(a_counts, getParamVals(params,0,num), "a", "Counts") 
 getRelationships(b_counts, getParamVals(params,1,num), "b", "Counts") 
 getRelationships(v0_counts, getParamVals(params,3,num), "v0", "Counts") 
@@ -225,11 +224,10 @@ getRelationships(v0_velocity, getParamVals(params,3,num), "v0", "Velocity")
 getRelationships(T_velocity, getParamVals(params,4,num), "T", "Velocity") 
 getRelationships(delta_velocity, getParamVals(params,5,num), "delta", "Velocity") 
 getRelationships(s0_velocity, getParamVals(params,6,num), "s0", "Velocity") 
-"""
-#getFit(v0_counts, getParamVals(params,3,num), "v0", "Counts","plateau") 
-getFit(T_counts, getParamVals(params,4,num), "T", "Counts","exp_decay") 
 
-"""
+#getFit(v0_counts, getParamVals(params,3,num), "v0", "Counts","plateau") 
+#getFit(T_counts, getParamVals(params,4,num), "T", "Counts","exp_decay") 
+
 #plot counts graphs
 plotCountsGraph(a_counts, "Varying the \"a\" parameter", getParamVals(params,0,num) ,"a_params_counts")
 plotCountsGraph(b_counts, "Varying the \"b\" parameter", getParamVals(params,1,num) ,"b_params_counts")
@@ -245,8 +243,6 @@ plotVelocityGraph(v0_velocity, "Varying the \"v0\" parameter", getParamVals(para
 plotVelocityGraph(T_velocity, "Varying the \"T\" parameter", getParamVals(params,4,num) ,"T_params_velocity")
 plotVelocityGraph(delta_velocity, "Varying the \"delta\" parameter", getParamVals(params,5,num) ,"delta_params_velocity")
 plotVelocityGraph(s0_velocity, "Varying the \"s0\" parameter", getParamVals(params,6,num) ,"s0_params_velocity")
-"""
-
 
 """
 popping last run
@@ -261,4 +257,3 @@ def randomAnalysis(p,c,v):
     print("velocity:", sum(v)/len(v))
     print()
 
-#randomAnalysis(p,c,v)

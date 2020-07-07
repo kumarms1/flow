@@ -8,7 +8,7 @@ from scipy.optimize import minimize
 from scipy.optimize import minimize_scalar
 import highway_free_flow as hff
 import numpy as np
-import time, random
+import time, random, csv, os, sys
 import matplotlib.pyplot as plt
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
@@ -21,14 +21,17 @@ measured_velocity = np.array(real_sim.getVelocityData())
 def objective(params):
     sim = hff.HighwayFreeFlow(params)
     simmed_counts = np.array(sim.getCountsData())
+    simmed_counts = addError(simmed_counts, True, 3)  #with error
     simmed_velocity = np.array(sim.getVelocityData())
+    simmed_velocity = addError(simmed_velocity, False, 3)  #with error
     error_counts = ((simmed_counts - measured_counts)**2).sum()
     error_velocity = ((simmed_velocity - measured_velocity)**2).sum()
     print("simmed params: ", params)
-    print("count error: " + str(error_counts))
-#    print("speed error: " + str(error_velocity))
- #   print("error: ", str(error_counts + error_velocity)) 
-    return error_counts
+ #   print("count error: " + str(error_counts))
+ #   print("speed error: " + str(error_velocity))
+    print("error: ", str(error_counts + error_velocity))
+    return error_velocity + error_counts
+
 #constraints?
 
 def addError(vals, isCounts, stdv):
@@ -38,6 +41,15 @@ def addError(vals, isCounts, stdv):
     else:
         y = np.random.normal(vals,stdv)
         return np.where(y<0, 0, y)
+
+
+def plotErrors(error):
+    timestr = time.strftime("%Y%m%d_%H%M%S")
+    csvName = "info/" + "error" + ".csv"
+    with open(csvName, "a") as file:
+          writer = csv.writer(file)
+          writer.writerows([error])
+
 
 #bounds
 a_bounds = (0.5,2)

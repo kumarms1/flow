@@ -470,17 +470,28 @@ The simmed params were as follows when I quit: [19.25907, 1.21013]
 
 # Noise Calibrations <a name="5" /> #
 
-## all parameters (counts)
-
 ## v0 and T parameters (counts) 
+Using v0 = 20 and T = 1 as initial guess parameters.
+
+The error started at 99.0 (highest initial error out of all sims with same conditions). After that the error started moving sporadically with lowest being 54.0 and the highest being 270.0. 10 minutes and there seems to be no convergence and the parameter set changed very minutely (20 -> 20.001, 1.0 -> 1.04).
+
+After 30 minutes of waiting and no declining error trend I force quit the optimization routine.
+
+## v0 and T parameters (speed) 
+Using v0 = 20 and T = 1 as initial guess parameters.
+
+Very similar behavior to the counts case, the initial error was the highest out of all similar sim conditions (170.413). There shows to be no convergence in error values, however, the parameter set for moved comparatively more (20 -> 18.9, 1 -> 1.06). Had to terminate the simulation after no sign of positive optimization.
+
+## v0 and T parameters (speed+counts) 
+Using v0 = 20 and T = 1 as initial guess parameters.
+
+The error counts for this run was off the charts with the best number being 271.313. Highly stochastic data sets are worse off when two data sets are taken into consideration for optimization. I had to force quit the simulation.
 
 ## all parameters (speed)
 
-## v0 and T parameters (speed) 
+## all parameters (counts)
 
 ## all parameters (speed+counts)
-
-## v0 and T parameters (speed+counts) 
 
 # Optimizing congested regime with non-constant inflow rates using s0,v0 and T as parameters and counts data <a name="6" /> ## 
 
@@ -497,8 +508,4 @@ Used the lower bound values as initial guess with v0 = 20.
 - [ ] lamda analysis needed
 - [ ] calibration of inflows needed 
 
-# To Do:
-- [ ] noise calibration
-- [ ] sensitivity analysis of longer sims
-- [ ] sensitivity analysis of noisy sims
 

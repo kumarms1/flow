@@ -667,10 +667,10 @@ at fidelity_60 average T function differentiates between free flow and congestio
 delta helps identify param set values (discontinuous at fidelity_60)
 
 ## TO DO (July 6)
-- [ ] sensentivity analysis of noise added sims
+- [x] sensentivity analysis of noise added sims
 - [ ] calibration of noise added sims
-- [ ] psueduo code of current calibration routine
 - [ ] organize all results on GitHub
+- [ ] psueduo code of current calibration routine
 - [ ] analysis of results
 - [ ] takeaway from results
 - [ ] read George and take notes of thought

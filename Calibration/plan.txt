@@ -1,3 +1,24 @@
-1) free flow data sim -> change automate.sh, exec_sim.sh, genParams.py, straightroad.py
-2) congested waves -> change automate.sh, exec_sim.sh, genParams.py, highway.py
-3) congested no waves -> change automate.sh, exec_sim.sh, genParams.py, highway.py
+# George's Ideas:
+In general we think that it is an interesting idea that one may not be able to recover a unique car-following model given radar-style data
+-> noise threshhold needed. 
+
+A concrete example of why this matters, is that model parameters critical to wave formation (such as a,b in the IDM) may vary greatly and this in turn may affect wave dynamics significantly
+-> true.
+
+We have some tools now that we might be able to use in order to demonstrate practically and theoretically that this is true
+-> the partial derivatives, sensitivity analysis and the calibration results
+
+Further more one might want to then start looking at how much variability one might plausibly have in theses parameters around some "optimal set"
+-> explanation needed.
+
+A formulation of this problem might be: Take your RDS data and use it to fit parameters. This might be first organizing into FD format and then regressing the equation for the FD (or something like that), or it might be via optimization over timeseries using simulation, or both
+-> noted.
+
+in whatever case we arrive at some fit for this data. Next, we consider a maximum allowable error to then try and optimize how different parameters might "plausibly be".
+-> determination of maximum allowable error and the plausibility of parameters. 
+ 
+using this info we can then say things about how unique we think our parameter set is, and the degree of certainty we may have over things like wave-speed and formation boundaries
+-> explanation needed.
+
+I think that may be enough of a contribution for a conference paper honestly, and has plenty of room for expansion in to a journal paper
+-> awesome!

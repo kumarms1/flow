@@ -53,13 +53,15 @@ Taking the partial derivatives of Q wrt to the IDM parameters and playing around
 
 ### High Level Algorithm
 ```
-define realistic IDM params #IDM params have the form [a,b,v0,T,delta,s0]
-get counts data using the realistic IDM params and store as an array (measured_counts)
-define an initial guess for the IDM params
-define the upper and lower bounds for each IDM param
-define the objective function as follows:
+1) define realistic IDM params #IDM params have the form [a,b,v0,T,delta,s0]
+2) run a sim to get the corresponding counts and speed data using the realistic IDM params and store as seperate arrays (measured_counts, measured_speeds)
+3) define an initial guess for the IDM params
+4) define the upper and lower bounds for each IDM param
+5) define the objective function as follows:
+      #we consider three variations of the objective function
+      #counts error, speed error, both counts and speed error
       #since the counts data are an array of form [count1, count2, ... ]
-      error = ((simmed_counts - measured_counts)**2).sum()
+      error = ((simmed_counts - measured_counts)**2).sum() + lambda* ((simmed_speed - measured_speed)**2).sum() 
 start the optimization routine using the Nelder-Mead solver to minimize the objective function.
 ```
 

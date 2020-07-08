@@ -10,6 +10,8 @@ import highway_free_flow as hff
 import numpy as np
 import time, random, csv, os, sys
 import matplotlib.pyplot as plt
+import sys
+
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
 realistic_params = [25, 1.6] # a,b,delta
@@ -20,17 +22,31 @@ measured_velocity = np.array(real_sim.getVelocityData())
 #objective function
 def objective(params):
     sim = hff.HighwayFreeFlow(params)
-    simmed_counts = np.array(sim.getCountsData())
-    simmed_counts = addError(simmed_counts, True, 3)  #with error
+ #   simmed_counts = np.array(sim.getCountsData())
+#    simmed_counts = addError(simmed_counts, True, 3)  #with error
     simmed_velocity = np.array(sim.getVelocityData())
-    simmed_velocity = addError(simmed_velocity, False, 3)  #with error
-    error_counts = ((simmed_counts - measured_counts)**2).sum()
-    error_velocity = ((simmed_velocity - measured_velocity)**2).sum()
+#    simmed_velocity = addError(simmed_velocity, False, 3)  #with error
+    simmed_speed, measured_speed = adjustSize(simmed_velocity, measured_velocity)
+    error_speeds = ((simmed_speed - measured_speed)**2).sum()
+   # error_velocity = ((simmed_velocity - measured_velocity)**2).sum()
     print("simmed params: ", params)
- #   print("count error: " + str(error_counts))
- #   print("speed error: " + str(error_velocity))
-    print("error: ", str(error_counts + error_velocity))
-    return error_velocity + error_counts
+#    print("count error: " + str(error_counts))
+    print("speed error: " + str(error_speeds))
+ #   print("error: ", str(error_counts + error_velocity))
+    saveErrors(error_speeds, params)
+    return error_speeds
+
+
+def adjustSize(sim, real):
+    real = list(real)
+    sim = list(sim)
+    while len(real) > len(sim):
+        real.pop()
+    while len(sim) > len(real):
+        sim.pop()
+   # print(len(real))
+   # print(len(sim))
+    return [np.array(sim),np.array(real)]
 
 #constraints?
 
@@ -43,13 +59,9 @@ def addError(vals, isCounts, stdv):
         return np.where(y<0, 0, y)
 
 
-def plotErrors(error):
-    timestr = time.strftime("%Y%m%d_%H%M%S")
-    csvName = "info/" + "error" + ".csv"
-    with open(csvName, "a") as file:
-          writer = csv.writer(file)
-          writer.writerows([error])
-
+def saveErrors(error, params):
+    with open('data/error.csv', 'a') as f:
+        f.write(str(error)+","+str(params)+"\n")
 
 #bounds
 a_bounds = (0.5,2)
@@ -63,7 +75,10 @@ bnds = (v0_bounds, T_bounds)
 
 #initial guess
 #guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
-guess = [20, 1]
+def setGuessedParams():
+    return [float(sys.argv[1]), float(sys.argv[2])]
+
+guess = setGuessedParams()
 
 """
 compare 5 different initial guesses:
@@ -72,7 +87,8 @@ compare 5 different initial guesses:
 """
 
 #optimize
-sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options={'disp':True})
+options = {"disp": True, "maxiter": 50}
+sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options=options)
 
 #store the optimized params,counts and speeds
 opt_params = sol.x
@@ -89,7 +105,7 @@ plt.plot([30*i for i in range(len(measured_counts))], measured_counts, label="re
 plt.legend()
 plt.xlabel("Data Taking Period")
 plt.ylabel("Counts Data")
-plt.title("Calibrating Counts Data")
+plt.title("Calibrating Counts Data (params: " + str(opt_params) + " )")
 plt.savefig("figures/counts_"+timestr+".png")
 plt.show()
 
@@ -100,7 +116,7 @@ plt.plot([30*i for i in range(len(measured_velocity))], measured_velocity, label
 plt.legend()
 plt.xlabel("Data Taking Period")
 plt.ylabel("Speed Data")
-plt.title("Calibrating Speed Data")
+plt.title("Calibrating Speed Data (params: " + str(opt_params) + " )")
 plt.savefig("figures/velocity_"+timestr+".png")
 plt.show()
 

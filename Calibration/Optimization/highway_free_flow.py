@@ -80,7 +80,7 @@ class HighwayFreeFlow:
             ),
             # environment related parameters (see flow.core.params.EnvParams)
             env=EnvParams(
-                horizon=1000,
+                horizon=600,
                 additional_params=ADDITIONAL_ENV_PARAMS.copy(),
             ),
             # network-related parameters (see flow.core.params.NetParams and the

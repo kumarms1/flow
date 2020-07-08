@@ -1,0 +1,13 @@
+Round 0, return: 48.367574639204754
+Average, std returns: 48.367574639204754, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1080.0, 0.0
+Total time: 6.562435150146484
+steps/second: 149.5292521076581
+Data successfully loaded.
+simmed params:  [22.99994659  1.38750486]
+count error: 2
+Optimization terminated successfully.
+         Current function value: 2.000000
+         Iterations: 20
+         Function evaluations: 61

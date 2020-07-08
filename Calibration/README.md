@@ -986,13 +986,13 @@ Doubled the time of simulation in free flow regime.
   </tr>
  </table>
 
-## TO DO (July 6)
+## TO DO (July 7)
 - [x] sensentivity analysis of noise added sims
 - [x] calibration of noise added sims
 - [x] organize all results on GitHub
 - [x] psueduo code of current calibration routine
 - [x] read George and take notes of thought
-- [ ] calib on different various initial guess sets
+- [x] calib on different various initial guess sets
 - [ ] penalty method max a for given tolerance of error 
 - [ ] analysis of results
 - [ ] takeaway from results

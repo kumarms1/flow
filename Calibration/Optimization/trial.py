@@ -24,10 +24,10 @@ def plotErrors(error):
         writer = csv.writer(file)
         writer.writerow([error])
 
-plotErrors(12)
-plotErrors(123)
-plotErrors(3)
-plotErrors(10)
+#plotErrors(12)
+#plotErrors(123)
+#plotErrors(3)
+#plotErrors(10)
 
 
 def animate():
@@ -47,4 +47,21 @@ def animate():
     plt.xlabel("Iteration")
     plt.show()
 
-animate()
+#animate()
+
+def adjustSize(sim, real):
+      while len(real) > len(sim):
+          real.pop()
+      while len(sim) > len(real):
+          sim.pop()
+      print(len(real))
+      print(len(sim))
+      return [sim,real]
+
+sim = [1,2,3,4,5,6,70,1,12]
+real = [0,1,2,3,4,5,6,2,1,12,22,7]
+
+x,y = adjustSize(sim,real)
+
+print(x)
+print(y)

@@ -1,0 +1,353 @@
+===============================================================
+
+Total time: 6.32876181602478
+steps/second: 146.41689435752892
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.5   1.35]
+error:  19.602303000000003
+
+Round 0, return: 46.12537825422796
+Average, std returns: 46.12537825422796, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1065.0, 0.0
+Total time: 6.72338604927063
+steps/second: 143.59433500374766
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.5   1.35]
+error:  11.84419100000001
+
+Round 0, return: 28.27485914692306
+Average, std returns: 28.27485914692306, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1170.0, 0.0
+Total time: 6.671951770782471
+steps/second: 139.99894878139696
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.75   1.275]
+error:  23.828916999999986
+
+Round 0, return: 26.723581249642628
+Average, std returns: 26.723581249642628, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1170.0, 0.0
+Total time: 6.527089834213257
+steps/second: 147.25398580059837
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.   1.2]
+error:  27.187295999999993
+
+Round 0, return: 41.59915552847116
+Average, std returns: 41.59915552847116, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1110.0, 0.0
+Total time: 6.608804941177368
+steps/second: 147.38844764141342
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.5    1.275]
+error:  15.513334000000002
+
+Round 0, return: 36.303761590554004
+Average, std returns: 36.303761590554004, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1170.0, 0.0
+Total time: 6.727761745452881
+steps/second: 138.6026327280348
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.5    1.275]
+error:  18.920249999999996
+
+Round 0, return: 41.41023526569089
+Average, std returns: 41.41023526569089, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1125.0, 0.0
+Total time: 6.574287176132202
+steps/second: 146.95202302161948
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.       1.29375]
+error:  16.94899
+
+Round 0, return: 52.38806010181306
+Average, std returns: 52.38806010181306, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1050.0, 0.0
+Total time: 6.352324962615967
+steps/second: 146.9420640475749
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.       1.33125]
+error:  15.191879999999996
+
+Round 0, return: 59.25689015904107
+Average, std returns: 59.25689015904107, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1005.0, 0.0
+Total time: 6.16162896156311
+steps/second: 152.43696640124284
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.       1.40625]
+error:  13.498211
+
+Round 0, return: 54.681357896567185
+Average, std returns: 54.681357896567185, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1035.0, 0.0
+Total time: 6.2849040031433105
+steps/second: 154.22743328115578
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.5    1.425]
+error:  11.301193999999992
+
+Round 0, return: 60.07900449210537
+Average, std returns: 60.07900449210537, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1020.0, 0.0
+Total time: 6.319704055786133
+steps/second: 149.09063242736767
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.75      1.471875]
+error:  7.298382999999999
+
+Round 0, return: 49.88952380339755
+Average, std returns: 49.88952380339755, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1065.0, 0.0
+Total time: 6.419618129730225
+steps/second: 150.75757919017494
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.25      1.415625]
+error:  6.610456999999992
+
+Round 0, return: 47.13148009218052
+Average, std returns: 47.13148009218052, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1095.0, 0.0
+Total time: 6.887470006942749
+steps/second: 142.12996469230754
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.875      1.4203125]
+error:  8.518899999999995
+
+Round 0, return: 60.33666634980497
+Average, std returns: 60.33666634980497, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1020.0, 0.0
+Total time: 6.338393926620483
+steps/second: 146.85138859163376
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.5     1.5375]
+error:  6.789834999999996
+
+Round 0, return: 52.42385253560278
+Average, std returns: 52.42385253560278, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1065.0, 0.0
+Total time: 6.444084882736206
+steps/second: 144.88454189186086
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [24.       1.48125]
+error:  3.5414990000000026
+Round 0, return: 49.708203727359546
+
+Average, std returns: 49.708203727359546, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1095.0, 0.0
+Total time: 6.539091110229492
+steps/second: 138.9551030760885
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [24.625      1.4859375]
+error:  6.681203999999996
+
+Round 0, return: 184.6602967135903
+Average, std returns: 184.6602967135903, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 720.0, 0.0
+Total time: 5.656519889831543
+steps/second: 169.43051203316801
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [20.  2.]
+error:  129.304866
+
+Round 0, return: 165.7875971291451
+Average, std returns: 165.7875971291451, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 765.0, 0.0
+Total time: 5.758927822113037
+steps/second: 164.33165527793955
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.  2.]
+error:  99.59418800000003
+
+Round 0, return: 193.2971318564446
+Average, std returns: 193.2971318564446, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 690.0, 0.0
+Total time: 5.565486192703247
+steps/second: 176.42833413457112
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [20.   2.1]
+error:  148.746733
+
+Round 0, return: 139.4091440719182
+Average, std returns: 139.4091440719182, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 780.0, 0.0
+Total time: 5.676114082336426
+steps/second: 169.54488516235415
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.   1.9]
+error:  83.97387600000002
+
+Round 0, return: 132.75111980051778
+Average, std returns: 132.75111980051778, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 840.0, 0.0
+Total time: 5.94287109375
+steps/second: 157.9628260793937
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.5  1.8]
+error:  52.23845200000001
+
+Round 0, return: 118.24265528769469
+Average, std returns: 118.24265528769469, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 870.0, 0.0
+Total time: 6.067822694778442
+steps/second: 154.77307877146637
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.5  1.8]
+error:  35.039068000000015
+
+Round 0, return: 67.24970471470348
+Average, std returns: 67.24970471470348, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 960.0, 0.0
+Total time: 6.081556797027588
+steps/second: 153.72747131757498
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [23.75  1.7 ]
+error:  8.936489
+
+Round 0, return: 52.28282469783898
+Average, std returns: 52.28282469783898, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1065.0, 0.0
+Total time: 6.397967100143433
+steps/second: 145.4212668554025
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [24.25  1.5 ]
+error:  2.953291999999998
+
+Round 0, return: 0.0
+Average, std returns: 0.0, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1275.0, 0.0
+Total time: 6.638148784637451
+steps/second: 139.87382994035463
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [25.875  1.25 ]
+error:  74.18327499999998
+
+
+
+Round 0, return: 48.0494750840684
+Average, std returns: 48.0494750840684, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 1110.0, 0.0
+Total time: 6.5362467765808105
+steps/second: 145.18961773013896
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [25.25  1.5 ]
+error:  5.312390999999998
+
+Round 0, return: 228.62346999275485
+Average, std returns: 228.62346999275485, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 615.0, 0.0
+Total time: 5.547259330749512
+steps/second: 174.16000096078875
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [20.   2.5]
+error:  227.75051800000003
+
+Round 0, return: 209.56031096029798
+Average, std returns: 209.56031096029798, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 645.0, 0.0
+Total time: 6.166069030761719
+steps/second: 165.1546348873862
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.   2.5]
+error:  202.14641700000004
+
+Round 0, return: 235.452598922787
+Average, std returns: 235.452598922787, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 585.0, 0.0
+Total time: 5.40845799446106
+steps/second: 180.97946227230096
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [20.     2.625]
+error:  254.06344000000004
+
+Round 0, return: 194.67475396904533
+Average, std returns: 194.67475396904533, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 660.0, 0.0
+Total time: 5.540694952011108
+steps/second: 181.994371948211
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.     2.375]
+error:  169.38973400000003
+
+Round 0, return: 179.2089179070182
+Average, std returns: 179.2089179070182, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 705.0, 0.0
+Total time: 6.186310768127441
+steps/second: 162.50733479294567
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [21.5   2.25]
+error:  136.176173
+
+
+===============================================================
+Round 0, return: 162.20363686995114
+Average, std returns: 162.20363686995114, 0.0
+Average, std velocities: nan, nan
+Average, std outflows: 735.0, 0.0
+Total time: 6.035279035568237
+steps/second: 155.92194159700918
+Data successfully loaded.
+Data successfully loaded.
+simmed params:  [22.5   2.25]
+error:  111.63370800000001

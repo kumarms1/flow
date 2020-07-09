@@ -1,5 +1,6 @@
 """
 @author: Sadman Ahmed Shanto
+@usage: python maximize_a_calib.py a_guess v0_guess T_guess
 """
 
 import numpy as np

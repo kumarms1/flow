@@ -5,12 +5,10 @@ references for realistic params and bounds:
     https://tigerprints.clemson.edu/cgi/viewcontent.cgi?referer=&httpsredir=1&article=2936&context=all_theses
 """
 from scipy.optimize import minimize
-from scipy.optimize import minimize_scalar
 import highway_free_flow as hff
 import numpy as np
 import time, random, csv, os, sys
 import matplotlib.pyplot as plt
-import sys
 
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
@@ -80,15 +78,10 @@ def setGuessedParams():
 
 guess = setGuessedParams()
 
-"""
-compare 5 different initial guesses:
-    store opt_params
-    compare error function of 5
-"""
 
 #optimize
-options = {"disp": True, "maxiter": 50}
-sol = minimize(objective, guess, method="Nelder-Mead", bounds=bnds, options=options)
+options = {"disp": True, "maxiter": 50} 
+sol = minimize(objective, guess, method="Newton-CG", bounds=bnds, jac=None, hess=None, options=options)
 
 #store the optimized params,counts and speeds
 opt_params = sol.x

@@ -14,3 +14,26 @@ pseudocode:
             -> start with biggest int in the magnitude in decimal_precision range
             -> binary search jumping in magnitude range
 """
+
+import numpy as np
+from scipy.optimize import minimize
+import matplotlib.pyplot as plt
+import highway_free_flow as hff
+import time, random, csv, os, sys
+
+#realistic sim
+realistic_params = [25, 1.6] # a,b,delta
+real_sim = hff.HighwayFreeFlow(realistic_params)
+measured_counts = np.array(real_sim.getCountsData())
+measured_velocity = np.array(real_sim.getVelocityData())
+
+
+def getErrorPecentage():
+    pass
+
+def checkErrorPercentCondition():
+    pass
+
+def findMaxInt():
+    pass
+

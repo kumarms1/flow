@@ -22,16 +22,19 @@ from scipy.optimize import NonlinearConstraint
 from scipy.optimize import SR1
 
 #realistic sim
-realistic_params = [0.73,1.67]
+realistic_params = [0.73,25,1.6]
 real_sim = hff.HighwayFreeFlow(realistic_params)
 measured_counts = np.array(real_sim.getCountsData())
 measured_velocity = np.array(real_sim.getVelocityData())
 
 #Should be starting from where ever your current best guess is:
-calibrated_params = [0.83,1.57]
+calibrated_params = [0.83,24.5,1.5] # Add a little bit of artificial error
 
 #NOTE: You could plausibly include this as the input you sent from the command line. I think:
+
 # calibrated_params = [float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])]
+
+
 
 #function definitions
 def getSpeedError(params):
@@ -67,17 +70,11 @@ def setGuessedParams():
     return [float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])]
 
 #a,v0,T
-bounds = Bounds([0,0],[np.inf,np.inf]) #No params should be negative
+bounds = Bounds([0,11,1],[np.inf,30,3]) #No params should be negative
 # guess = setGuessedParams()
 best_error = getSpeedError(calibrated_params) #instead of guess used calibrated params
 
 print("Initial error: ", best_error)
-
-def getErrorDifference(params):
-    new_sim_error = getSpeedError(params)
-    error_diff = (new_sim_error - best_error)**2
-    print("error difference: " + str(error_diff))
-    return error_diff
 
 def getSpeedErrorPercentage(params):
     #This is a SENSITIVITY constraint
@@ -87,21 +84,20 @@ def getSpeedErrorPercentage(params):
         percent_error = 0
     else:
         percent_error = error_diff/new_sim_error
-    print("error percetange: " + str(100*percent_error) + " %")
+    print("error percetange: ", percent_error)
     return percent_error
 
-max_error_diff = 10 
+max_error_diff = 10.0 
 
-error_constraint = NonlinearConstraint(getErrorDifference,0,max_error_diff)
+error_constraint = NonlinearConstraint(getSpeedErrorPercentage,0,max_error_diff)
 
 #sensitivity obj func
 def objective(params):
     #This is a SENSITIVITY objective
     a = params[0]
-    b = params[1]
-    print("value of \"a\" parameter: ", a)
-    print("value of \"b\" parameter: ", b)
-    return -a-b
+    print("value of a parameter: ", a)
+    print("the new param set is ", params) #[a, v0, T]
+    return a
 
-sol = minimize(objective, calibrated_params, method="trust-constr", bounds=bounds, constraints=error_constraint, options={'verbose': 3, 'xtol': 1e-08})
+sol = minimize(objective, calibrated_params, method="trust-constr", bounds=bounds, constraints=error_constraint, options={'verbose': 3, 'xtol': 1e-04})
 print(sol.x)

@@ -21,9 +21,9 @@ class HighwayFreeFlow:
 
     def __init__(self,params,fidelity=30):
         self.a = params[0]
-        self.b = 1.67
-        self.v0 = params[1] 
-        self.T= params[2]
+        self.b = params[1]
+        self.v0 = 30
+        self.T= 1
         self.delta = 4
         self.s0 = 2
         self.noise = 0 #no noise

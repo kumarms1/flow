@@ -31,7 +31,7 @@ measured_counts = np.array(real_sim.getCountsData())
 measured_velocity = np.array(real_sim.getVelocityData())
 
 #Should be starting from where ever your current best guess is:
-calibrated_params = [0.83,1.57]
+calibrated_params = [0.73,1.67]
 
 #NOTE: You could plausibly include this as the input you sent from the command line. I think:
 # calibrated_params = [float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])]
@@ -72,7 +72,7 @@ def setGuessedParams():
 #a,v0,T
 bounds = Bounds([0,0],[np.inf,np.inf]) #No params should be negative
 # guess = setGuessedParams()
-best_error = getSpeedError(calibrated_params) #instead of guess used calibrated params
+best_error = getSpeedError(calibrated_params) 
 
 print("Initial error: ", best_error)
 
@@ -93,7 +93,7 @@ def getSpeedErrorPercentage(params):
     print("error percetange: " + str(100*percent_error) + " %")
     return percent_error
 
-max_error_diff = 2 
+max_error_diff = 2.5 
 
 error_constraint = NonlinearConstraint(getErrorDifference,0,max_error_diff)
 

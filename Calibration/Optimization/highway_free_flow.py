@@ -20,6 +20,7 @@ import Process_Flow_Outputs as PFO
 class HighwayFreeFlow:
 
     def __init__(self,params,fidelity=30):
+        print("Starting simulation...")
         self.a = params[0]
         self.b = params[1]
         self.v0 = 30
@@ -37,6 +38,7 @@ class HighwayFreeFlow:
         self.additional_net_params['length'] = 1600
         self.csvFileName = ""
         self.runSim()
+        print("Simulation over!")
 
     def addVehicles(self):
         vehicles = VehicleParams()

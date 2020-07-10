@@ -21,6 +21,9 @@ from scipy.optimize import minimize
 from scipy.optimize import NonlinearConstraint
 from scipy.optimize import SR1
 
+#optimization stats var
+Nfeval = 1
+
 #realistic sim
 realistic_params = [0.73,1.67]
 real_sim = hff.HighwayFreeFlow(realistic_params)
@@ -90,7 +93,7 @@ def getSpeedErrorPercentage(params):
     print("error percetange: " + str(100*percent_error) + " %")
     return percent_error
 
-max_error_diff = 10 
+max_error_diff = 2 
 
 error_constraint = NonlinearConstraint(getErrorDifference,0,max_error_diff)
 
@@ -103,5 +106,10 @@ def objective(params):
     print("value of \"b\" parameter: ", b)
     return -a-b
 
-sol = minimize(objective, calibrated_params, method="trust-constr", bounds=bounds, constraints=error_constraint, options={'verbose': 3, 'xtol': 1e-08})
+def callbackF(params,status):
+    global Nfeval
+    print('Iter: {0:4d}, a: {1: 3.6f}, b: {2: 3.6f}, obj: {3: 3.6f}, error_diff: {4: 3.6f}'.format(Nfeval, params[0], params[1], objective(params), getErrorDifference(params)))
+    Nfeval += 1
+
+sol = minimize(objective, calibrated_params, method="trust-constr", bounds=bounds, constraints=error_constraint, callback=callbackF, options={'verbose': 3, 'xtol': 1e-08})
 print(sol.x)

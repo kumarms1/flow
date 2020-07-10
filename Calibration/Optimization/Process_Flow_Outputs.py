@@ -13,7 +13,8 @@ class SimulationData():
         self.data_integrals = {}
         self.SimulationData_Dict = {}
         self.Extract_Data()
-        print('Data successfully loaded.')
+        #print('Data successfully loaded.')
+        print('Recording Macro data....')
             
         
         

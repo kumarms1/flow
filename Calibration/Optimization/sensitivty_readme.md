@@ -16,8 +16,11 @@ The method naming convention should be self explanatory
 
 ### global
 scipy.optimize import Bounds
+
 scipy.optimize import minimize
+
 scipy.optimize import SR1
+
 numpy, sys
 
 ### local

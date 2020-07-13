@@ -10,7 +10,6 @@ import numpy as np
 import time, random, csv, os, sys
 import matplotlib.pyplot as plt
 
-
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
 realistic_params = [25, 1.6] # a,b,delta
 real_sim = hff.HighwayFreeFlow(realistic_params)

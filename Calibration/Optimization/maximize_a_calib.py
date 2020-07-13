@@ -21,8 +21,7 @@ from scipy.optimize import minimize
 from scipy.optimize import NonlinearConstraint
 from scipy.optimize import SR1
 
-#optimization stats var
-Nfeval = 1
+Nfeval = 1 #tracks the number of iterations in optimization routine
 
 #realistic sim
 realistic_params = [0.73,1.67]
@@ -73,7 +72,6 @@ def setGuessedParams():
 bounds = Bounds([0,0],[np.inf,np.inf]) #No params should be negative
 # guess = setGuessedParams()
 best_error = getSpeedError(calibrated_params) 
-
 print("Initial error: ", best_error)
 
 def getErrorDifference(params):
@@ -95,6 +93,7 @@ def getSpeedErrorPercentage(params):
 
 max_error_diff = 2.5 
 
+#setting up the error constraints
 error_constraint = NonlinearConstraint(getErrorDifference,0,max_error_diff)
 
 #sensitivity obj func
@@ -106,10 +105,12 @@ def objective(params):
     print("value of \"b\" parameter: ", b)
     return -a-b
 
+# the following function gets executed when an iteration is complete (using for print outs)
 def callbackF(params,status):
     global Nfeval
     print('Iter: {0:4d}, a: {1: 3.6f}, b: {2: 3.6f}, obj: {3: 3.6f}, error_diff: {4: 3.6f}'.format(Nfeval, params[0], params[1], objective(params), getErrorDifference(params)))
     Nfeval += 1
 
+#calls and starts the optimization routine
 sol = minimize(objective, calibrated_params, method="trust-constr", bounds=bounds, constraints=error_constraint, callback=callbackF, options={'verbose': 3, 'xtol': 1e-08})
 print(sol.x)

@@ -94,7 +94,7 @@ def getSpeedErrorPercentage(params):
     return percent_error
 
 #setting up the error constraints
-max_error_diff = 10
+max_error_diff = 2.5
 
 def nl_constraint(params):
     return - getErrorDifference(params) + max_error_diff
@@ -117,8 +117,8 @@ def callbackF(params):
     Nfeval += 1
 
 #calls and starts the optimization routine
-sol = shgo(objective, bounds=bounds, constraints=error_constraint, iters=1, callback=callbackF, options={'disp':True}) 
-print(sol.x)
+sol = shgo(objective, bounds=bounds, constraints=error_constraint, iters=1, callback=callbackF, options={'disp':True})
+print('sol.x = ', sol.x)
 print("Other local minima found: ")
 print(sol.xl)
 print("Corresponding func evals:")

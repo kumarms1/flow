@@ -141,15 +141,19 @@ class HighwayCongested:
         self.deleteDataFile(self.csvFileName)
 
     def getMeanSpeed(self):
+        print("Mean Speed ", self.meanSpeed)
         return self.meanSpeed
 
     def getMeanCounts(self):
+        print("Mean Counts ", self.meanCounts)
         return self.meanCounts
 
     def getStdSpeed(self):
+        print("Std Dev Speed ", self.stdSpeed)
         return self.stdSpeed
 
     def getStdCounts(self):
+        print("Std Dev Counts", self.stdCounts)
         return self.stdCounts
 
     def processMacroData(self,csvFile):

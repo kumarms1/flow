@@ -11,29 +11,14 @@ import time, random, csv, os, sys
 import matplotlib.pyplot as plt
 
 #realistic_params = [0.73, 1.67, 25, 1.6, 4, 2] # a,b,v0,T,delta, s0
-realistic_params = [25, 1.6] # a,b,delta
-real_sim = hc.HighwayFreeFlow(realistic_params)
+realistic_params = [1.3] # a,b
+num_samples_from_end = 15
+real_sim = hc.HighwayCongested(wave_params=realistic_params)
 measured_counts = np.array(real_sim.getCountsData())
 measured_velocity = np.array(real_sim.getVelocityData())
 
-#objective function
-def objective(params):
-    sim = hc.HighwayFreeFlow(params)
- #   simmed_counts = np.array(sim.getCountsData())
-#    simmed_counts = addError(simmed_counts, True, 3)  #with error
-    simmed_velocity = np.array(sim.getVelocityData())
-#    simmed_velocity = addError(simmed_velocity, False, 3)  #with error
-    simmed_speed, measured_speed = adjustSize(simmed_velocity, measured_velocity)
-    error_speeds = ((simmed_speed - measured_speed)**2).sum()
-   # error_velocity = ((simmed_velocity - measured_velocity)**2).sum()
-    print("simmed params: ", params)
-#    print("count error: " + str(error_counts))
-    print("speed error: " + str(error_speeds))
- #   print("error: ", str(error_counts + error_velocity))
-    saveErrors(error_speeds, params)
-    return error_speeds
 
-
+#function definitions
 def adjustSize(sim, real):
     real = list(real)
     sim = list(sim)
@@ -41,11 +26,25 @@ def adjustSize(sim, real):
         real.pop()
     while len(sim) > len(real):
         sim.pop()
-   # print(len(real))
-   # print(len(sim))
     return [np.array(sim),np.array(real)]
 
-#constraints?
+def selectNumSamples(simmed_measures,real_measures,num_samples_from_end):
+    simmed_measures, real_measures = adjustSize(simmed_measures,real_measures)
+    simmed_measures_trimmed = simmed_measures[-num_samples_from_end:]
+    real_measures_trimmed = real_measures[-num_samples_from_end:]
+    return [simmed_measures_trimmed,real_measures_trimmed]
+
+#objective function
+def objective(params):
+    sim = hc.HighwayCongested(wave_params=params)
+    simmed_velocity = np.array(sim.getVelocityData())
+    simmed_speed, measured_speed = selectNumSamples(simmed_velocity, measured_velocity, num_samples_from_end)
+    error_speeds = ((simmed_speed - measured_speed)**2).sum()
+    print("simmed params: ", params)
+    print("speed error: " + str(error_speeds))
+    saveErrors(error_speeds, params)
+    sim.destroyCSV()
+    return error_speeds
 
 def addError(vals, isCounts, stdv):
     if isCounts:
@@ -54,7 +53,6 @@ def addError(vals, isCounts, stdv):
     else:
         y = np.random.normal(vals,stdv)
         return np.where(y<0, 0, y)
-
 
 def saveErrors(error, params):
     with open('data/error.csv', 'a') as f:
@@ -67,24 +65,21 @@ v0_bounds = (0,30)
 T_bounds = (1,3)
 delta_bounds = (1,5)
 s0_bounds = (0.1,5)
-bnds = (v0_bounds, T_bounds)
-#bnds = (a_bounds, b_bounds, v0_bounds, T_bounds, delta_bounds, s0_bounds)
+bnds = (a_bounds)
 
 #initial guess
-#guess = [ 0.5, 0.5, 20, 1, 1, 0.1] #lower bounds
 def setGuessedParams():
     return [float(sys.argv[1]), float(sys.argv[2])]
 
-guess = setGuessedParams()
-
+guess = [0.5] 
 
 #optimize
-options = {"disp": True, "maxiter": 50} 
-sol = minimize(objective, guess, method="Newton-CG", bounds=bnds, jac=None, hess=None, options=options)
+option = {"disp": True} 
+sol = minimize(objective, guess, method="Nelder-Mead", options=option)
 
 #store the optimized params,counts and speeds
 opt_params = sol.x
-opt_sim = hc.HighwayFreeFlow(opt_params)
+opt_sim = hc.HighwayCongested(wave_params=opt_params)
 opt_counts = np.array(opt_sim.getCountsData())
 opt_velocity = np.array(opt_sim.getVelocityData())
 
@@ -101,7 +96,6 @@ plt.title("Calibrating Counts Data (params: " + str(opt_params) + " )")
 plt.savefig("figures/counts_"+timestr+".png")
 plt.show()
 
-
 #plot average speed data
 plt.plot([30*i for i in range(len(opt_velocity))], opt_velocity,"r-" ,label="fit")
 plt.plot([30*i for i in range(len(measured_velocity))], measured_velocity, label="real")
@@ -111,4 +105,3 @@ plt.ylabel("Speed Data")
 plt.title("Calibrating Speed Data (params: " + str(opt_params) + " )")
 plt.savefig("figures/velocity_"+timestr+".png")
 plt.show()
-

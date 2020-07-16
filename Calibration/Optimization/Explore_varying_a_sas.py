@@ -92,8 +92,6 @@ speeds = np.array(speeds)
 np.savetxt('varying_a_counts.csv',counts,delimiter=',')
 np.savetxt('varying_a_speeds.csv',speeds,delimiter=',')
 np.savetxt('varying_a_aVals.csv',a_vals,delimiter=',')
-np.savetxt('varying_a_original_counts.csv',counts,delimiter=',')
-np.savetxt('varying_a_original_speeds.csv',counts,delimiter=',')
 print('Sampling finished.')
 
 #plot

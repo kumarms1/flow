@@ -2,7 +2,7 @@
 
 from flow.controllers.base_controller import BaseController
 import numpy as np
-
+from queue import Queue
 
 class FollowerStopper(BaseController):
     """Inspired by Dan Work's... work.
@@ -119,12 +119,17 @@ class FollowerStopper(BaseController):
 class NonLocalFollowerStopper(FollowerStopper):
     """Follower stopper that uses the average system speed to compute its acceleration."""
 
+
+    """removed from gete_acceel function for efficency in building follower stopper with dynamic v_des"""
+    def calc_new_v_des(self, env):
+        return np.mean(env.k.vehicle.get_speed(env.k.vehicle.get_ids()))
+
     def get_accel(self, env):
         """See parent class."""
+        self.v_des = self.calc_new_v_des(env)
         lead_id = env.k.vehicle.get_leader(self.veh_id)
         this_vel = env.k.vehicle.get_speed(self.veh_id)
         lead_vel = env.k.vehicle.get_speed(lead_id)
-        self.v_des = np.mean(env.k.vehicle.get_speed(env.k.vehicle.get_ids()))
 
         if self.v_des is None:
             return None
@@ -163,6 +168,77 @@ class NonLocalFollowerStopper(FollowerStopper):
             # compute the acceleration from the desired velocity
             return (v_cmd - this_vel) / env.sim_step
 
+
+class DynamicFollowerStopper(NonLocalFollowerStopper):
+    def calc_new_v_des(self, env):
+        """
+
+        Parameters
+        ----------
+        env: flow.envs.Env
+        see
+        flow / envs / base.py
+
+
+        Returns
+        -------
+        the new desired velocity of the vehicle, based on the average of 50 cars ahead
+
+        """
+
+        ahead_velocity_sum = env.k.vehicle.get_speed(self.veh_id)
+        vehicle_count = 1
+        lead_id = env.k.vehicle.get_leader(self.veh_id)
+        while lead_id is not None and lead_id != self.veh_id and vehicle_count < 50:
+            vehicle_count += 1
+            ahead_velocity_sum += env.k.vehicle.get_speed(lead_id)
+            lead_id = env.k.vehicle.get_leader(lead_id)
+        return ahead_velocity_sum/vehicle_count
+
+
+class DynamicDelayFollowerStopper(DynamicFollowerStopper):
+    """
+       New arameter
+       ----------
+       delay : float
+            delay in given average
+       """
+    def __init__(self,
+                 veh_id,
+                 car_following_params,
+                 delay,
+                 v_des=25,
+                 danger_edges=None):
+        DynamicFollowerStopper.__init__(
+            self, veh_id, car_following_params,
+            v_des, danger_edges=danger_edges)
+
+        self.delay = delay
+
+        # Time delay queue
+        self.q = Queue(maxsize=delay + 1)
+        for x in range(delay):
+            self.q.put(v_des)
+
+    def calc_new_v_des(self, env):
+        """
+
+              Parameters
+              ----------
+              env: flow.envs.Env
+              see
+              flow / envs / base.py
+
+
+              Returns
+              -------
+              the new desired velocity of the vehicle, based on the average of 50 cars ahead, with a given time delay
+
+              """
+        self.q.put(DynamicFollowerStopper.calc_new_v_des(self,env))
+        speed = self.q.get()
+        print(speed)
+        return speed
 
 class PISaturation(BaseController):
     """Inspired by Dan Work's... work.
@@ -238,3 +314,5 @@ class PISaturation(BaseController):
         accel = (self.v_cmd - this_vel) / env.sim_step
 
         return min(accel, self.max_accel)
+
+
